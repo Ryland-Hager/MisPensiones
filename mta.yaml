@@ -1,40 +1,90 @@
-_schema-version: '3.1'
+_schema-version: "3.1"
 ID: MisPensiones
+description: A simple CAP project.
 version: 1.0.0
-description: "A simple CAP project."
+modules:
+- name: MisPensiones-srv
+  type: nodejs
+  path: gen/srv
+  requires:
+  - name: MisPensiones-db
+  provides:
+  - name: srv-api
+    properties:
+      srv-url: ${default-url}
+  parameters:
+    buildpack: nodejs_buildpack
+  build-parameters:
+    builder: npm
+- name: MisPensiones-db-deployer
+  type: hdb
+  path: db
+  requires:
+  - name: MisPensiones-db
+  parameters:
+    buildpack: nodejs_buildpack
+- name: MisPensiones-destination-content
+  type: com.sap.application.content
+  requires:
+  - name: MisPensiones-destination-service
+    parameters:
+      content-target: true
+  - name: MisPensiones_html_repo_host
+    parameters:
+      service-key:
+        name: MisPensiones_html_repo_host-key
+  - name: uaa_MisPensiones
+    parameters:
+      service-key:
+        name: uaa_MisPensiones-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: MisPensiones_MisPensiones_html_repo_host
+          ServiceInstanceName: MisPensiones-html5-app-host-service
+          ServiceKeyName: MisPensiones_html_repo_host-key
+          sap.cloud.service: MisPensiones
+        - Authentication: OAuth2UserTokenExchange
+          Name: MisPensiones_uaa_MisPensiones
+          ServiceInstanceName: MisPensiones-xsuaa-service
+          ServiceKeyName: uaa_MisPensiones-key
+          sap.cloud.service: MisPensiones
+        existing_destinations_policy: ignore
+  build-parameters:
+    no-source: true
+resources:
+- name: MisPensiones-db
+  type: com.sap.xs.hdi-container
+  parameters:
+    service: hana
+    service-plan: hdi-shared
+- name: MisPensiones-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      version: 1.0.0
+    service: destination
+    service-name: MisPensiones-destination-service
+    service-plan: lite
+- name: MisPensiones_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: MisPensiones-html5-app-host-service
+    service-plan: app-host
+- name: uaa_MisPensiones
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: MisPensiones-xsuaa-service
+    service-plan: application
 parameters:
   enable-parallel-deployments: true
 build-parameters:
   before-all:
-    - builder: custom
-      commands:
-        - npx cds build --production
-modules:
-  - name: MisPensiones-srv
-    type: nodejs
-    path: gen/srv
-    parameters:
-      buildpack: nodejs_buildpack
-    build-parameters:
-      builder: npm
-    provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
-        properties:
-          srv-url: ${default-url}
-    requires:
-      - name: MisPensiones-db
-
-  - name: MisPensiones-db-deployer
-    type: hdb
-    path: db
-    parameters:
-      buildpack: nodejs_buildpack
-    requires:
-      - name: MisPensiones-db
-
-resources:
-  - name: MisPensiones-db
-    type: com.sap.xs.hdi-container
-    parameters:
-      service: hana
-      service-plan: hdi-shared
+  - builder: custom
+    commands:
+    - npx cds build --production
