@@ -84,7 +84,6 @@
             "css": []
         },
         "routing": {
-            "config": {},
             "routes": [
                 {
                     "pattern": ":?query:",
@@ -125,6 +124,15 @@
                             "editableHeaderContent": false,
                             "entitySet": "Empleados"
                         }
+                    }
+                }
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ListReport.ListReportController": {
+                        "controllerName": "mis.pensiones.ext.controller.ListPageExt"
                     }
                 }
             }
