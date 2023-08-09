@@ -1,0 +1,89 @@
+<core:FragmentDefinition 
+	xmlns:core="sap.ui.core" 
+	xmlns="sap.m" 
+	xmlns:macros="sap.fe.macros">
+	
+
+<mvc:View
+	id="zView"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified">
+
+	<l:VerticalLayout id="verticalLayout" width="100%">
+
+	<VBox  id="poVBox" core:require="{ handler: 'mis/pensiones/ext/fragment/PorcentajeAportacion'}" class="sapUiSmallMargin">
+		<f:Form id="FormPorcentajeObj"
+			editable="false">
+			<f:layout>
+				<f:ColumnLayout id="poColumnLayout"
+					columnsM="2"
+					columnsL="3"
+					columnsXL="3"
+				/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer id="FC1" title='{i18n>PorcentajeAportacion}'>
+					<f:formElements>
+						<f:FormElement id="FE1" label='{i18n>aportacionMaximaObj}'>
+							<f:fields>
+								<Text text="{aportacionMaxima}" id="maxText"  />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement id="FE2" label='{i18n>quieresAhorrarObj}'>
+							<f:fields>
+								<Select
+								id="ahorrarSelect"
+								forceSelection="false"
+								selectedKey="{quieresAhorrar}"
+								autoAdjustWidth="true"
+								items="{
+									path: '/ahorrarCollection',
+									sorter: { path: 'Name' }
+								}">
+								<core:Item id="itemId" key="{/ahorrarId}" text="{/Name}" />
+							</Select>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:FormContainer id="FC2" title='{i18n>AportacionEmpleado}'>
+					<f:formElements>
+						<f:FormElement id="FE3" label='{i18n>aportacionProyeccionEmpleado}'>
+							<f:fields>
+								<Text text="{aportacionProyeccionEmpleado}" id="EmployProyText" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement id="FE4" label='{i18n>aportacionActualEmpleado}'>
+							<f:fields>
+								<Text text="{aportacionActualEmpleado}" id="EmployActText"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<f:FormContainer id="FC3" title='{i18n>AportacionEmpresa}'>
+					<f:formElements>
+						<f:FormElement id="FE5" label='{i18n>aportacionProyeccionEmpresa}'>
+							<f:fields>
+								<Text text="{aportacionProyeccionEmpresa}" id="EmprProyText"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement id="FE6" label='{i18n>aportacionActualEmpresa}'>
+							<f:fields>
+								<Text text="{aportacionActualEmpresa}" id="EmprActText"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
+
+	</l:VerticalLayout>
+
+</mvc:View>
+
+</core:FragmentDefinition>

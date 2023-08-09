@@ -1,0 +1,92 @@
+<core:FragmentDefinition 
+	xmlns:core="sap.ui.core" 
+	xmlns="sap.m" 
+	xmlns:macros="sap.fe.macros">
+	
+
+<mvc:View
+	id="zView"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.ui.unified">
+
+	<l:VerticalLayout id="verticalLayout" width="100%">
+
+	<VBox  id="poVBox" core:require="{ handler: 'mis/pensiones/ext/fragment/ProyeccionFondo'}" class="sapUiSmallMargin">
+		<f:Form id="FormProyeccionFondo"
+			editable="false">
+			<f:layout>
+				<f:ColumnLayout id="poColumnLayout"
+					columnsM="2"
+					columnsL="2"
+					columnsXL="2"
+				/>
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer id="FC1" title='{i18n>ProyeccionFondoObj}'>
+					<f:formElements>
+						<f:FormElement id="FE1" label='{i18n>fondoInversion}'>
+							<!-- <f:fields>
+								<Text text="{aportacionMaxima}" id="maxText"  />
+							</f:fields> -->
+							<Select
+								id="fondoSelect"
+								forceSelection="false"
+								selectedKey="{fondoAhorro}"
+								autoAdjustWidth="true"
+								items="{
+									path: '/fondoCollection',
+									sorter: { path: 'Name' }
+								}">
+								<core:Item id="itemId" key="{/fondoId}" text="{/Name}" />
+							</Select>
+						</f:FormElement>
+						<f:FormElement id="FE2" label='{i18n>razonSocial}'>
+							<f:fields>
+								<Text text="{razonSocial}" id="razonText"  />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement id="FE3" label='{i18n>razonSocial}'>
+							<f:fields>
+								<Text text="{clavePizarra}" id="claveText"  />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement id="FE4" label='{i18n>razonSocial}'>
+							<f:fields>
+								<Text text="{horizonteInversion}" id="horizonteText"  />
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+				<!-- <f:FormContainer id="FC2">
+					<f:formElements>
+						<f:FormElement id="FE5">
+								<Button id="realizarBtn" text="{i18n>realizarBtn}"
+									press="onPress"
+									type="Emphasized">
+									<layoutData>
+                                		<FlexItemData id="btnLayout" growFactor="1"/>
+                            		</layoutData>
+								</Button>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer> -->
+			</f:formContainers>
+		</f:Form>
+		<Button id="realizarBtn" text="{i18n>realizarBtn}"
+			press="onPress"
+			type="Emphasized">
+			<layoutData>
+            	<FlexItemData id="btnLayout" growFactor="1"/>
+            </layoutData>
+		</Button>
+	</VBox>
+
+	</l:VerticalLayout>
+
+</mvc:View>
+
+</core:FragmentDefinition>

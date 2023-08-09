@@ -8,13 +8,16 @@ modules:
   path: gen/srv
   requires:
   - name: MisPensiones-db
+  - name: uaa_MisPensiones
   provides:
   - name: srv-api
     properties:
       srv-url: ${default-url}
   parameters:
+    host: ${appname}
     buildpack: nodejs_buildpack
   build-parameters:
+    ignore: [".env", "./node_modules"]
     builder: npm
 - name: MisPensiones-db-deployer
   type: hdb
@@ -22,6 +25,7 @@ modules:
   requires:
   - name: MisPensiones-db
   parameters:
+    ignore: [".env", "./node_modules"]
     buildpack: nodejs_buildpack
 - name: MisPensiones-destination-content
   type: com.sap.application.content
@@ -96,6 +100,13 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
+          - Name: MisPensiones-app-api
+            Authentication: NoAuthentication
+            ProxyType: Internet
+            HTML5.ForwardAuthToken: true
+            HTML5.DynamicDestination: true
+            Type: HTTP
+            URL: https://${appname}.${default-domain}  
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
@@ -117,6 +128,7 @@ resources:
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
+  appname: MisPensiones-fcf59e0ea4e1
 build-parameters:
   before-all:
   - builder: custom

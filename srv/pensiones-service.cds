@@ -1,7 +1,7 @@
 using DATA.PE as DATA from '../db/schema';
 
 // @path: 'pension'
-// @requires: 'authenticated-user'
+@requires: 'authenticated-user'
 service PensionesService {
     entity Empleados as select from DATA.EMPLEADOS {
         *,

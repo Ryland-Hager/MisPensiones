@@ -1,0 +1,29 @@
+<core:FragmentDefinition 
+	xmlns:core="sap.ui.core" 
+	xmlns="sap.m" 
+	xmlns:macros="sap.fe.macros">
+
+<mvc:View
+	id="zView"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout">
+
+	<l:VerticalLayout id="verticalLayout" width="100%">
+
+	<TextArea 
+		id="CommentBox" 
+		core:require="{ handler: 'mis/pensiones/ext/fragment/Comentarios'}" 
+		value="{comentarios}"
+		valueLiveUpdate="true"
+		maxLength="200" 
+		width="100%"
+		rows="4"
+		liveChange="handler.onHandleLiveChange"/>
+
+	</l:VerticalLayout>
+
+</mvc:View>
+
+</core:FragmentDefinition>

@@ -1,52 +1,54 @@
 {
-    "name": "MisPensiones",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
-        "@sap/cds": "^7",
-        "@sap/cds-hana": "^2",
-        "@sap/hana-client": "^2.17.22",
-        "express": "^4"
-    },
-    "devDependencies": {
-        "@cap-js/sqlite": "^1",
-        "@sap/cds-dk": "^7",
-        "@sap/hdi-deploy": "4.8.0",
-        "@sap/ux-specification": "^1.108.11",
-        "rimraf": "^3.0.2"
-    },
-    "scripts": {
-        "start": "cds-serve",
-        "watch-mis.pensiones": "cds watch --open mis.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
-        "undeploy": "cf undeploy MisPensiones --delete-services --delete-service-keys --delete-service-brokers",
-        "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-    },
-    "cds": {
-        "build": {
-            "tasks": [
-                {
-                    "for": "hana",
-                    "dest": "../db"
-                },
-                {
-                    "for": "node-cf"
-                }
-            ]
+  "name": "MisPensiones",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/hana-client": "^2.17.22",
+    "express": "^4",
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.2.0",
+    "passport": "^0.4.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-mis.pensiones": "cds watch --open mis.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy MisPensiones --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+  },
+  "cds": {
+    "build": {
+      "tasks": [
+        {
+          "for": "hana",
+          "dest": "../db"
         },
-        "requires": {
-            "db": {
-                "kind": "hana-cloud"
-            }
-        },
-        "hana": {
-            "deploy-format": "hdbtable"
+        {
+          "for": "node-cf"
         }
+      ]
     },
-    "sapux": [
-        "app/mis.pensiones"
-    ]
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "db": {
+        "kind": "hana"
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    },
+    "fiori": {
+      "lean_draft": false
+    }
+  },
+  "sapux": [
+    "app/mis.pensiones"
+  ]
 }

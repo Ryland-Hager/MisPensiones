@@ -1,0 +1,256 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "mis.pensiones",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.10.4",
+            "toolsId": "6daf5cbe-a01e-4aff-810f-efd27ea7d20c"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "odata/v4/pensiones/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.116.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "mis.pensiones.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "EmpleadosList",
+                    "target": "EmpleadosList"
+                },
+                {
+                    "pattern": "Empleados({key}):?query:",
+                    "name": "EmpleadosObjectPage",
+                    "target": "EmpleadosObjectPage"
+                }
+            ],
+            "targets": {
+                "EmpleadosList": {
+                    "type": "Component",
+                    "id": "EmpleadosList",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "Empleados",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "Empleados": {
+                                    "detail": {
+                                        "route": "EmpleadosObjectPage"
+                                    }
+                                }
+                            },
+                            "initialLoad": "Enabled",
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "enableExport": false,
+                                        "personalization": {
+                                            "column": false,
+                                            "filter": false
+                                        },
+                                        "quickVariantSelection": {
+                                            "showCounts": true
+                                        },
+                                        "selectAll": false,
+                                        "selectionLimit": 0,
+                                        "type": "ResponsiveTable"
+                                    },
+                                    "actions": {
+                                        "cambioPorcentaje": {
+                                            "press": ".extension.mis.pensiones.ext.controller.ListPageExt.onCambioPorcentaje",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": false,
+                                            "text": "{i18n>cambioPorcentaje}"
+                                        },
+                                        "generarCartas": {
+                                            "text": "Generación de las Cartas"
+                                        },
+                                        "reporteEsquemaContratacion": {
+                                            "text": "Reporte Esquema de Contratación"
+                                        },
+                                        "reporteAportacions": {
+                                            "text": "Reporte Aportaciones"
+                                        },
+                                        "reporteAuditoriaIncorporaciones": {
+                                            "text": "Reporte Auditoria Incorporaciones"
+                                        },
+                                        "reporteEmpleadosActivos": {
+                                            "text": "Reporte de Empleados Activos en Pensiones"
+                                        },
+                                        "reporteFiniquitos": {
+                                            "text": "Reporte de Finiquitos"
+                                        },
+                                        "validarCumplimiento": {
+                                            "text": "Validar Cumplimiento de Reglas"
+                                        },
+                                        "cargaManual": {
+                                            "press": ".extension.mis.pensiones.ext.controller.ListPageExt.onCargaManual",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "text": "Carga Manual"
+                                        }
+                                    },
+                                    "columns": {
+                                        "DataField::ID": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::primerNombre": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::apellidoPaterno": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::apellidoMaterno": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::workdayID": {
+                                            "width": "20%"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "EmpleadosObjectPage": {
+                    "type": "Component",
+                    "id": "EmpleadosObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "Empleados",
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "Comentarios": {
+                                            "template": "mis.pensiones.ext.fragment.Comentarios",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "DetalleEmpleado"
+                                            },
+                                            "title": "Comentarios",
+                                            "type": "XMLFragment"
+                                        },
+                                        "PorcentajeAportacion": {
+                                            "template": "mis.pensiones.ext.fragment.PorcentajeAportacion",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "EstadoCuenta"
+                                            },
+                                            "title": "{i18n>PorcentajeAportacion} ",
+                                            "type": "XMLFragment"
+                                        },
+                                        "ProyeccionFondo": {
+                                            "template": "mis.pensiones.ext.fragment.ProyeccionFondo",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "PorcentajeAportacion"
+                                            },
+                                            "title": "{18n>ProyeccionFondo}",
+                                            "type": "XMLFragment"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.fe.templates.ListReport.ListReportController": {
+                        "controllerName": "mis.pensiones.ext.controller.ListPageExt"
+                    },
+                    "sap.fe.templates.ObjectPage.ObjectPageController": {
+                        "controllerName": "mis.pensiones.ext.controller.ObjectPageExt"
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "MisPensiones"
+    }
+}
