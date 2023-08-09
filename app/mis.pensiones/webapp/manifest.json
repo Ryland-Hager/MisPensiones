@@ -193,7 +193,40 @@
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "Empleados"
+                            "entitySet": "Empleados",
+                            "content": {
+                                "body": {
+                                    "sections": {
+                                        "Comentarios": {
+                                            "template": "mis.pensiones.ext.fragment.Comentarios",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "DetalleEmpleado"
+                                            },
+                                            "title": "Comentarios",
+                                            "type": "XMLFragment"
+                                        },
+                                        "PorcentajeAportacion": {
+                                            "template": "mis.pensiones.ext.fragment.PorcentajeAportacion",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "EstadoCuenta"
+                                            },
+                                            "title": "{i18n>PorcentajeAportacion} ",
+                                            "type": "XMLFragment"
+                                        },
+                                        "ProyeccionFondo": {
+                                            "template": "mis.pensiones.ext.fragment.ProyeccionFondo",
+                                            "position": {
+                                                "placement": "After",
+                                                "anchor": "PorcentajeAportacion"
+                                            },
+                                            "title": "{18n>ProyeccionFondo}",
+                                            "type": "XMLFragment"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -204,6 +237,9 @@
                 "sap.ui.controllerExtensions": {
                     "sap.fe.templates.ListReport.ListReportController": {
                         "controllerName": "mis.pensiones.ext.controller.ListPageExt"
+                    },
+                    "sap.fe.templates.ObjectPage.ObjectPageController": {
+                        "controllerName": "mis.pensiones.ext.controller.ObjectPageExt"
                     }
                 }
             }
