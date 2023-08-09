@@ -111,6 +111,77 @@
                                         "route": "EmpleadosObjectPage"
                                     }
                                 }
+                            },
+                            "initialLoad": "Enabled",
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "enableExport": false,
+                                        "personalization": {
+                                            "column": false,
+                                            "filter": false
+                                        },
+                                        "quickVariantSelection": {
+                                            "showCounts": true
+                                        },
+                                        "selectAll": false,
+                                        "selectionLimit": 0,
+                                        "type": "ResponsiveTable"
+                                    },
+                                    "actions": {
+                                        "cambioPorcentaje": {
+                                            "press": ".extension.mis.pensiones.ext.controller.ListPageExt.onCambioPorcentaje",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "requiresSelection": false,
+                                            "text": "{i18n>cambioPorcentaje}"
+                                        },
+                                        "generarCartas": {
+                                            "text": "Generación de las Cartas"
+                                        },
+                                        "reporteEsquemaContratacion": {
+                                            "text": "Reporte Esquema de Contratación"
+                                        },
+                                        "reporteAportacions": {
+                                            "text": "Reporte Aportaciones"
+                                        },
+                                        "reporteAuditoriaIncorporaciones": {
+                                            "text": "Reporte Auditoria Incorporaciones"
+                                        },
+                                        "reporteEmpleadosActivos": {
+                                            "text": "Reporte de Empleados Activos en Pensiones"
+                                        },
+                                        "reporteFiniquitos": {
+                                            "text": "Reporte de Finiquitos"
+                                        },
+                                        "validarCumplimiento": {
+                                            "text": "Validar Cumplimiento de Reglas"
+                                        },
+                                        "cargaManual": {
+                                            "press": ".extension.mis.pensiones.ext.controller.ListPageExt.onCargaManual",
+                                            "visible": true,
+                                            "enabled": true,
+                                            "text": "Carga Manual"
+                                        }
+                                    },
+                                    "columns": {
+                                        "DataField::ID": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::primerNombre": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::apellidoPaterno": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::apellidoMaterno": {
+                                            "width": "20%"
+                                        },
+                                        "DataField::workdayID": {
+                                            "width": "20%"
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
