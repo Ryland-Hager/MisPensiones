@@ -1,0 +1,12 @@
+{
+    "role": {
+        "name": "int_read" ,"schema_privileges": [
+            {
+                "privileges": [
+                    "SELECT",
+                    "SELECT METADATA"
+                ]
+            }
+        ]
+    }
+}

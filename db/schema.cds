@@ -5,7 +5,7 @@ namespace DATA.PE;
 //@cds.persistence.exists
 entity EMPLEADOS {
     key ID                          : String(8)        @Common.Label: '{i18n>ID}';
-    key RFC                         : String(13)       @Common.Label:'{i18n>RFC}';
+    key RFC                         : String(50)       @Common.Label:'{i18n>RFC}';
     primerNombre                    : String(15)       @Common.Label:'{i18n>primerNombre}';
     apellidoPaterno                 : String(15)       @Common.Label:'{i18n>apellidoPaterno}';
     apellidoMaterno                 : String(15)       @Common.Label:'{i18n>apellidoMaterno}';
@@ -19,14 +19,14 @@ entity EMPLEADOS {
     fechaActualizacion              : Date             @Common.Label:'{i18n>fechaActualizacion}';
     fechaBeneficios                 : Date             @Common.Label:'{i18n>fechaBeneficios}';
     contracto                       : String(15)       @Common.Label:'{i18n>contracto}';
-    colaborador                     : String(15)       @Common.Label:'{i18n>colaborador}';
-    puesto                          : String(15)       @Common.Label:'{i18n>puesto}';
+    colaborador                     : String(50)       @Common.Label:'{i18n>colaborador}';
+    puesto                          : String(50)       @Common.Label:'{i18n>puesto}';
     empresaID                       : String(15)       @Common.Label:'{i18n>empresaID}';
-    empresaText                     : String(15)       @Common.Label:'{i18n>empresaText}';
+    empresaText                     : String(50)       @Common.Label:'{i18n>empresaText}';
     marcaPlanTOP                    : Boolean          @Common.Label:'{i18n>marcaPlanTOP}';
     marcaPlanMatch                  : Boolean          @Common.Label:'{i18n>marcaPlanMatch}';
     marcaPPR                        : Boolean          @Common.Label:'{i18n>marcaPPR}';
-    fondoAhorro                     : String(15)       @Common.Label:'{i18n>fondoAhorro}';
+    fondoAhorro                     : String(50)       @Common.Label:'{i18n>fondoAhorro}';
     aportacionFutura                : String(15)       @Common.Label:'{i18n>aportacionFutura}';
     aportacionVigente               : String(15)       @Common.Label:'{i18n>apartacionVigente}';
     fondoVive                       : String(15)       @Common.Label:'{i18n>fondoVive}';
@@ -39,7 +39,7 @@ entity EMPLEADOS {
     comentarios                     : String(200)      @Common.Label:'{i18n>comentarios}';
     anosMesesDiasAntiguedad         : String(15)       @Common.Label:'{i18n>anosMesesDiasAntiguedad}';
     montoDerechosAdquiridos         : Decimal(15,2)    @Common.Label:'{i18n>montoDerechosAdquiridos}';
-    derechosAdquiridos              : Boolean          @Common.Label:'{i18n>derechosAdquiridos}';
+    derechosAdquiridos              : Decimal(3,2)     @Common.Label:'{i18n>derechosAdquiridos}';
     // aportacionMaxima                : Integer          @Common.Label:'{i18n>aportacionMaxima}';
     quieresAhorrar                  : Integer          @Common.Label:'{i18n>quieresAhorrar}';
     // aportacionActualEmpleado        : Decimal(15,2)    @Common.Label:'{i18n>aportacionActualEmpleado}';
@@ -47,7 +47,7 @@ entity EMPLEADOS {
     // aportacionActualEmpresa         : Decimal(15,2)    @Common.Label:'{i18n>aportacionActualEmpresa}';
     // aportacionProyeccionEmpresa     : Decimal(15, 2)   @Common.Label:'{i18n>aportacionProyeccionEmpresa}';
     fondoInversion                  : String(15)       @Common.Label:'{i18n>fondoInversion}';
-    razonSocial                     : String(15)       @Common.Label:'{i18n>razonSocial}';
+    razonSocial                     : String(50)       @Common.Label:'{i18n>razonSocial}';
     clavePizarra                    : String(15)       @Common.Label:'{i18n>clavePizarra}';
     horizonteInversion              : String(15)       @Common.Label:'{i18n>horizonteInversion}';
     cuentas                         : Association to many ESTADO_CUENTA on cuentas.empleadoID = $self.ID;
