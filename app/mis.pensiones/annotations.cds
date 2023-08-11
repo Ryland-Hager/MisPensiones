@@ -223,10 +223,6 @@ annotate service.Empleados with @(
                 {
                     $Type: 'UI.DataField',
                     Value: anosMesesDiasAntiguedad,
-                },
-                {
-                    $Type: 'UI.DataField',
-                    Value: comentarios,
                 }
             ]
         },
