@@ -1,2 +1,2 @@
-
-using from './mis.pensiones/annotations';
+using from './mis.pensiones/ListReportPage';
+using from './mis.pensiones/EmpleadosObjectPage';

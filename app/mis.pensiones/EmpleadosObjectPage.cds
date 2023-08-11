@@ -2,56 +2,6 @@ using PensionesService as service from '../../srv/pensiones-service';
 
 annotate service.Empleados with @(
     UI: {
-        HeaderInfo  : {
-            $Type : 'UI.HeaderInfoType',
-            TypeName : 'Empleado',
-            TypeNamePlural : 'Empleados',
-            Title : {
-                $Type : 'UI.DataField',
-                Value : primerNombre
-            },
-            Description : {
-                $Type : 'UI.DataField',
-                Value : apellidoMaterno
-            }
-        },
-        Identification  : [
-            {Value: ID},
-        ],
-        LineItem : [
-            {
-                $Type : 'UI.DataField',
-                Label : 'ID Empleado',
-                Value : ID,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Nombres',
-                Value : primerNombre,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Apellido Paterno',
-                Value : apellidoPaterno,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Apellido Materno',
-                Value : apellidoMaterno,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'ID Workday',
-                Value : workdayID,
-            },
-        ],
-        SelectionFields : [
-            ID,
-            primerNombre,
-            apellidoPaterno,
-            apellidoMaterno,
-            workdayID
-        ],
         Facets : [
             {
                 $Type : 'UI.ReferenceFacet',
@@ -320,93 +270,8 @@ annotate service.Empleados with @(
         //         },
         //     ]
         // }
-    },
-    Capabilities.DeleteRestrictions: {
-        Deletable: false
     }
-)
-{
-    @UI.HiddenFilter
-    sueldoMensual;
-    @UI.HiddenFilter
-    tipoContracto;
-    @UI.HiddenFilter
-    grupoPago;
-    @UI.HiddenFilter
-    fechaAntiguedad;
-    @UI.HiddenFilter
-    fechaIngreso;
-    @UI.HiddenFilter
-    fechaIncorporacion;
-    @UI.HiddenFilter
-    fechaActualizacion;
-    @UI.HiddenFilter
-    fechaBeneficios;
-    @UI.HiddenFilter
-    contracto;
-    @UI.HiddenFilter
-    colaborador;
-    @UI.HiddenFilter
-    puesto;
-    @UI.HiddenFilter
-    empresaID;
-    @UI.HiddenFilter
-    empresaText;
-    @UI.HiddenFilter
-    marcaPlanTOP;
-    @UI.HiddenFilter
-    marcaPlanMatch;
-    @UI.HiddenFilter
-    marcaPPR;
-    @UI.HiddenFilter
-    fondoAhorro;
-    @UI.HiddenFilter
-    aportacionFutura;
-    @UI.HiddenFilter
-    aportacionVigente;
-    @UI.HiddenFilter
-    fondoVive;
-    @UI.HiddenFilter
-    coberturaMedica;
-    @UI.HiddenFilter
-    medicoVitalicio;
-    @UI.HiddenFilter
-    planBeneficio;
-    @UI.HiddenFilter
-    puntajeAntiguedad;
-    @UI.HiddenFilter
-    puntajeEdad;
-    @UI.HiddenFilter
-    puntosActuales;
-    @UI.HiddenFilter
-    comentarios;
-    @UI.HiddenFilter
-    anosMesesDiasAntiguedad;
-    @UI.HiddenFilter
-    montoDerechosAdquiridos;
-    @UI.HiddenFilter
-    derechosAdquiridos;
-    @UI.HiddenFilter
-    aportacionMaxima;
-    @UI.HiddenFilter
-    quieresAhorrar;
-    @UI.HiddenFilter
-    aportacionActualEmpleado;
-    @UI.HiddenFilter
-    aportacionProyeccionEmpleado;
-    @UI.HiddenFilter
-    aportacionActualEmpresa;
-    @UI.HiddenFilter
-    aportacionProyeccionEmpresa;
-    @UI.HiddenFilter
-    fondoInversion;
-    @UI.HiddenFilter
-    razonSocial;
-    @UI.HiddenFilter
-    clavePizarra;
-    @UI.HiddenFilter
-    horizonteInversion;
-};
+);
 
 annotate service.EstadoCuenta with @(
     UI : {
@@ -523,13 +388,3 @@ annotate service.EstadoCuenta with @(
 
     // }
 );
-
-
-
-annotate service.Empleados with {
-    ID @title:'{i18n>ID}' @UI.HiddenFilter;
-    primerNombre @title:'{i18n>primerNombre}';
-    apellidoPaterno @title:'{i18n>apellidoPaterno}';
-    apellidoMaterno @title:'{i18n>apellidoMaterno}';
-    workdayID @title:'{i18n>workdayID}';
-}
