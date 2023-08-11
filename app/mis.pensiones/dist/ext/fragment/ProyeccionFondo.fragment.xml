@@ -37,10 +37,7 @@
 								forceSelection="false"
 								selectedKey="{fondoAhorro}"
 								autoAdjustWidth="true"
-								items="{
-									path: '/fondoCollection',
-									sorter: { path: 'Name' }
-								}">
+								>
 								<core:Item id="itemId" key="{/fondoId}" text="{/Name}" />
 							</Select>
 						</f:FormElement>

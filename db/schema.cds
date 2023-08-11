@@ -55,9 +55,9 @@ entity EMPLEADOS {
 
 entity ESTADO_CUENTA {
     key cuentaID : String(8);
-    key cuentaRFC : String(13);
+    key cuentaRFC : String(18);
     empresaID : String(15);
-    planTOP : Decimal(15, 2);
+    planTOP : Boolean;
     porcentajePlanTOP : Decimal(15, 2);
     AEMP : Decimal(15, 2);
     rendimientosAEMP : Decimal(15, 2);
