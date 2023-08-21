@@ -27,31 +27,31 @@ annotate service.Empleados with @(
                 ID : 'EstadoCuenta',
                 Target : 'cuentas/@UI.LineItem'
             },
-            // {
-            //     $Type : 'UI.CollectionFacet',
-            //     Label : '{i18n>PorcentajeAportacion}',
-            //     ID : 'PorcentajeAportacion',
-            //     Facets : [
-            //         {
-            //             $Type : 'UI.ReferenceFacet',
-            //             Label : '{i18n>PorcentajeAportacion}',
-            //             ID : 'PorcentajeAportacionFacet',
-            //             Target : '@UI.FieldGroup#PorcentajeAportacion'
-            //         },
-            //         {
-            //             $Type : 'UI.ReferenceFacet',
-            //             Label : '{i18n>AportacionEmpleado}',
-            //             ID : 'AportacionEmpleadoFacet',
-            //             Target : '@UI.FieldGroup#AportacionEmpleado'
-            //         },
-            //         {
-            //             $Type : 'UI.ReferenceFacet',
-            //             Label : '{i18n>AportacionEmpresa}',
-            //             ID : 'AportacionEmpresaFacet',
-            //             Target : '@UI.FieldGroup#AportacionEmpresa'
-            //         },
-            //     ]
-            // },
+            {
+                $Type : 'UI.CollectionFacet',
+                Label : '{i18n>PorcentajeAportacion}',
+                ID : 'PorcentajeAportacion',
+                Facets : [
+                    {
+                        $Type : 'UI.ReferenceFacet',
+                        Label : '{i18n>PorcentajeAportacion}',
+                        ID : 'PorcentajeAportacionFacet',
+                        Target : '@UI.FieldGroup#PorcentajeAportacion'
+                    },
+                    {
+                        $Type : 'UI.ReferenceFacet',
+                        Label : '{i18n>AportacionEmpleado}',
+                        ID : 'AportacionEmpleadoFacet',
+                        Target : '@UI.FieldGroup#AportacionEmpleado'
+                    },
+                    {
+                        $Type : 'UI.ReferenceFacet',
+                        Label : '{i18n>AportacionEmpresa}',
+                        ID : 'AportacionEmpresaFacet',
+                        Target : '@UI.FieldGroup#AportacionEmpresa'
+                    },
+                ]
+            },
             // {
             //     $Type : 'UI.CollectionFacet',
             //     Label : '{i18n>ProyeccionFondo}',
@@ -173,7 +173,11 @@ annotate service.Empleados with @(
                 {
                     $Type: 'UI.DataField',
                     Value: anosMesesDiasAntiguedad,
-                }
+                },
+                // {
+                //     $Type: 'UI.DataField',
+                //     Value: sueldoMensual,
+                // }
             ]
         },
         // FieldGroup #Comentarios : {
@@ -208,47 +212,51 @@ annotate service.Empleados with @(
                 }
             ]
         },
-        // FieldGroup #PorcentajeAportacion : {
-        //     $Type : 'UI.FieldGroupType',
-        //     Data : [
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Label: '{i18n>aportacionMaximaObj}',
-        //             Value: aportacionMaxima,
-        //         },
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Label: '{i18n>quieresAhorrarObj}',
-        //             Value: quieresAhorrar,
-        //         },
-        //     ]
-        // },
-        // FieldGroup #AportacionEmpleado : {
-        //     $Type : 'UI.FieldGroupType',
-        //     Data : [
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: aportacionProyeccionEmpleado,
-        //         },
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: aportacionActualEmpleado,
-        //         },
-        //     ]
-        // },
-        // FieldGroup #AportacionEmpresa : {
-        //     $Type : 'UI.FieldGroupType',
-        //     Data : [
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: aportacionProyeccionEmpresa,
-        //         },
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: aportacionActualEmpresa,
-        //         },
-        //     ]
-        // },
+        FieldGroup #PorcentajeAportacion : {
+            $Type : 'UI.FieldGroupType',
+            Data : [
+                {
+                    $Type: 'UI.DataField',
+                    Label: '{i18n>aportacionMaximaObj}',
+                    Value: aportacionMaxima,
+                },
+                {
+                    $Type: 'UI.DataField',
+                    Label: '{i18n>quieresAhorrarObj}',
+                    Value: anosMesesDiasAntiguedad
+                },
+            ]
+        },
+        FieldGroup #AportacionEmpleado : {
+            $Type : 'UI.FieldGroupType',
+            Data : [
+                {
+                    $Type: 'UI.DataField',
+                    Label: '{i18n>aportacionActualEmpleado}',
+                    Value: aportacionActualEmpleado,
+                },
+                {
+                    $Type: 'UI.DataField',
+                    Label: '{i18n>aportacionProyeccionEmpleado}',
+                    Value: aportacionProyeccionEmpleado,
+                },
+            ]
+        },
+        FieldGroup #AportacionEmpresa : {
+            $Type : 'UI.FieldGroupType',
+            Data : [
+                {
+                    $Type: 'UI.DataField',
+                    Label: '{i18n>aportacionActualEmpresa}',
+                    Value: aportacionActualEmpresa,
+                },
+                {
+                    $Type: 'UI.DataField',
+                    Label: '{i18n>aportacionProyeccionEmpresa}',
+                    Value: aportacionProyeccionEmpresa,
+                },
+            ]
+        },
         // FieldGroup #ProyeccionFondo : {
         //     $Type : 'UI.FieldGroupType',
         //     Data : [
@@ -272,6 +280,34 @@ annotate service.Empleados with @(
         // }
     }
 );
+
+annotate service.Empleados with {
+    anosMesesDiasAntiguedad @(Common: {
+        
+        Text : anosMesesDiasAntiguedad,
+        TextArrangement : #TextOnly,
+        ValueListWithFixedValues: true,
+        ValueList : {
+            Label : 'anosMesesDiasAntiguedad',
+            // $Type : 'Common.ValueListType',
+            CollectionPath : 'MapaElementos',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    ValueListProperty : 'anosMesesDiasAntiguedad',
+                    LocalDataProperty : anosMesesDiasAntiguedad
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'comment'
+                },
+            ]
+        },
+
+
+    });
+}
+
 
 annotate service.EstadoCuenta with @(
     UI : {

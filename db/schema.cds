@@ -1,4 +1,4 @@
-using {managed} from '@sap/cds/common';
+using {User, managed} from '@sap/cds/common';
 
 namespace DATA.PE;
 
@@ -51,13 +51,19 @@ entity EMPLEADOS {
     clavePizarra                    : String(15)       @Common.Label:'{i18n>clavePizarra}';
     horizonteInversion              : String(15)       @Common.Label:'{i18n>horizonteInversion}';
     cuentas                         : Association to many ESTADO_CUENTA on cuentas.empleadoID = $self.ID;
+    allowedPercentages              : Association to many ALLOWEDPERCENTAGES on allowedPercentages.empleadoID = $self.ID;
+    // virtual aportacionMaxima        : Integer           @readonly;
+    // virtual aportacionActualEmpleado        : Decimal(15,2)     @readonly;
+    // virtual aportacionProyeccionEmpleado    : Decimal(15, 2)    @readonly;
+    // virtual aportacionActualEmpresa         : Decimal(15,2)     @readonly;
+    // virtual aportacionProyeccionEmpresa     : Decimal(15, 2)    @readonly;
 }
 
 entity ESTADO_CUENTA {
     key cuentaID : String(8);
     key cuentaRFC : String(18);
     empresaID : String(15);
-    planTOP : Boolean;
+    planTOP : Decimal(15,2);
     porcentajePlanTOP : Decimal(15, 2);
     AEMP : Decimal(15, 2);
     rendimientosAEMP : Decimal(15, 2);
@@ -298,4 +304,21 @@ entity CARTA_REC_KEE_FIL_AUX3 : managed {
     fondo : String(20);
     contrato : Integer;
     chequeraPropia : String(20);
+}
+
+entity MAPAELEMENTOS : managed{
+    key anosMesesDiasAntiguedad : String(15);
+    filterID : String;
+    filterRFC : String;
+    elementType : String(1);
+    comment : String(100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
+}
+
+entity ALLOWEDPERCENTAGES {
+    key allowedPercentages : Integer;
+    empleadoID : String(8);
 }

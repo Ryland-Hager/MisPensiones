@@ -116,10 +116,10 @@
                             "controlConfiguration": {
                                 "@com.sap.vocabularies.UI.v1.LineItem": {
                                     "tableSettings": {
-                                        "enableExport": false,
+                                        "enableExport": true,
                                         "personalization": {
-                                            "column": false,
-                                            "filter": false
+                                            "column": true,
+                                            "filter": true
                                         },
                                         "quickVariantSelection": {
                                             "showCounts": true

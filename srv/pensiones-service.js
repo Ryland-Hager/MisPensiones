@@ -1,114 +1,75 @@
 const cds = require('@sap/cds')
-// const SequenceHelper = require("./lib/SequenceHelper");
-// const { PassThrough } = require("stream");
+const { PassThrough } = require("stream")
+const {calculateVirtualData, getEmployeeData} = require('./utils/empleadoUtils')
 
 class PensionesService extends cds.ApplicationService {
-    async init() {
+    
+    init() {
         /* ------------------------Get All the relevant entities-----------------------------------------------------*/
-        const db = await cds.connect.to("db");
+        // const db = await cds.connect.to("db");
         
         //Get entities
-        // const {Empleados,
-        //     Aportacion} = db.entities('PensionesService');
         const {Empleados,
-            Aportacion} = this.entities;
+            Aportacion, MapaElementos} = this.entities;
 
         /* ------------------------Unbound Actions in List Report-----------------------------------------------------*/
 
-
         this.after('READ', Empleados, async (empleados, req) => {
 
+            //include Aportacion in function paramaters and abstract to employeeUtils
+            let employeeData = await getEmployeeData(Empleados, req.data.ID, req.data.RFC);
+            let porcentaje = await SELECT.from (Aportacion);
 
-        //    //CALCULATE SENIORITY SCORE (ACTUAL DATE - DATE OF JOINING)
-        //    let sAntiguedad = 7.31;
-
-        //    //CALCULATE Age SCORE (ACTUAL DATE - BIRTH DATE)
-        //    let sPuntajeEdad = 34.76; 
-
-
-        //     let porcentaje = await SELECT.from (Aportacion);
-
-        //     for(var i = 0; i < porcentaje.length; i++) {
             
-        //         if((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad))
-        //         {
-        //             empleados.aportacionMaxima = porcentaje[i].porcentajeMax;
-        //         }
-        //     }
+            empleados.forEach(employee => {
+                
+                if(employee.ID == employeeData[0].ID) {
 
-        //     console.log(empleados.sueldoMensual);
-        //     console.log(empleados.aportacionFutura);
+                    let sAntiguedad = employee.puntajeAntiguedad; 
+                    
+                    for(var i = 0; i < porcentaje.length; i++) {
+            
+                        if((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad))
+                        {
+                            employee.aportacionMaxima = porcentaje[i].porcentajeMax;
+                        }
+                    }
 
-        //     var aportAct = (empleados.sueldoMensual * (empleados.aportacionFutura * .01));
+                    // employee.aportacionActualEmpleado = (parseFloat(employee.sueldoMensual) * (employee.aportacionMaxima * .01)).toFixed(2);
+                    // employee.aportacionProyeccionEmpleado = (parseFloat(employee.sueldoMensual) * parseFloat(employee.aportacionVigente)).toFixed(2);
+                    employee.aportacionActualEmpleado = Math.round((employeeData[0].sueldoMensual * (employee.aportacionMaxima * .01)));
+                    employee.aportacionProyeccionEmpleado = Math.round((employeeData[0].sueldoMensual * employee.aportacionVigente));
+                    employee.aportacionActualEmpresa = 26543.23;
+                    employee.aportacionProyeccionEmpresa = 32859.19;
 
-        //     empleados.aportacionActualEmpleado = aportAct;
-        //     empleados.aportacionProyeccionEmpresa = (empleados.sueldoMensual * (empleados.aportacionMaxima * .01));
-        //     empleados.aportacionActualEmpresa = 3891;
-        //     empleados.aportacionProyeccionEmpresa = 3161;
+                }
+            })
         })
 
+        this.on('READ', 'MapaElementos', async (req) => {
 
-        // this.on('maxPorcentajeCheck', async (req) => {
+            let concepts;
+            // let filterString = req.query.$filter;
 
-        //     if (req.context.params) {
-
-        //         let aID = req.context.params.map(function (elem) {
-        //             return elem.ID;
-        //         })
-
-        //         let aEmpleado = await SELECT.from (Empleados) .where ({ID: aID});
-        //         let today = (await SELECT`CURRENT_DATE`.from`DUMMY`)[0]['CURRENT_DATE'];
-        //         var start = aEmpleado[0].fechaAntiguedad;
-        //         today.toString();
-        //         start.toString();
-
-        //         // console.log(today);
-        //         // console.log(start);
-
-        //         // let todayY = today.substr(0, 4);
-        //         // let todayM = today.substr(5, 2);
-        //         // let todayD = today.substr(8, 2);
-        //         // let startY = today.substr(0, 4);
-        //         // let startM = today.substr(5, 2);
-        //         // let startD = today.substr(8, 2);
-
-        //         // console.log(todayY);
-        //         // console.log(todayM);
-        //         // console.log(todayD);
-
-        //         // var start = getDateValue(seniority);
-        //         // var end = dFecha.getDateValue();
-        //         // console.log(start);
-        //         // console.log(end);
+            // if (filterString) {
                 
-        //         var seniority = "3.5";
-        //         var max, low, high;
-
-        //         let aAportaciones = [];
-        //         aAportaciones = await SELECT.from (Aportacion);
+            //     let ID = filterString.split("'")[1];
+            //     let RFC = filterString.split("'")[3];
+            //     let employeeData = await getEmployeeData(Empleados, ID, RFC);
                 
-        //         // console.log(aAportaciones.length);
+            //     concepts = [
+            //         {anosMesesDiasAntiguedad: "1", comment: 'One'},
+            //         {anosMesesDiasAntiguedad: "2", comment: 'Two'}
+            //     ]
+            // }
+            concepts = [
+                {anosMesesDiasAntiguedad: '1' , comment: 'One'},
+                {anosMesesDiasAntiguedad: '2' , comment: 'Two'}
+            ]
 
-        //         for(var i = 0; i < aAportaciones.length; i++)
-        //         {
-        //             if(i == aAportaciones.length-1){
-        //                 return(aAportaciones[i].porcentajeMax);
-        //             }
-
-        //             low = aAportaciones[i].antiguedadInicial;
-        //             high = aAportaciones[i].antiguedadFinal;
-
-        //             // console.log(low);
-        //             // console.log(high);
-
-        //             if((seniority>=low) && (seniority<=high)) {
-        //                 // console.log(aAportaciones[i].porcentajeMax);
-        //                 max = aAportaciones[i].porcentajeMax;
-        //                 return max;
-        //             }
-        //         }
-        //     }
-        // });
+            return concepts;
+        })
+        
 
         this.on('cambioPorcentaje', async (req) => {
             
@@ -451,7 +412,7 @@ class PensionesService extends cds.ApplicationService {
              }
         })
 
-        await super.init()
+        return super.init()
     }
 };
-module.exports = PensionesService
+module.exports = { PensionesService }

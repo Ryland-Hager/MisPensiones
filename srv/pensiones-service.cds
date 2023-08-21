@@ -15,6 +15,15 @@ service PensionesService {
         action maxPorcentajeCheck() returns String(15);
         action updateComment(comentarios: String(200));
     };
+    annotate Empleados with @odata.draft.enabled;
+
+
+
+    // entity Empleados as projection on DATA.EMPLEADOS actions {
+    //     action cambioPorcentaje(aportacionFutura: String(15));
+    //     action maxPorcentajeCheck() returns String(15);
+    //     action updateComment(comentarios: String(200));
+    // };
 
     @cds.persistence.skip
     @odata.singleton
@@ -48,4 +57,6 @@ service PensionesService {
     entity CartaRecKeeFilAux1 as projection on DATA.CARTA_REC_KEE_FIL_AUX1;
     entity CartaRecKeeFilAux2 as projection on DATA.CARTA_REC_KEE_FIL_AUX2;
     entity CartaRecKeeFilAux3 as projection on DATA.CARTA_REC_KEE_FIL_AUX3;
+
+    entity MapaElementos as projection on DATA.MAPAELEMENTOS;
 }

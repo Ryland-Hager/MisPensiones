@@ -1,1 +1,1 @@
-sap.ui.define(["sap/m/MessageToast"],function(s){"use strict";return{onPress:function(e){s.show("Custom handler invoked.")}}});
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel"],function(e,n){"use strict";var o=e.extend("mis/pensiones/ext/fragment/PorcentajeAportacion",{override:{onInit:function(){console.log("Controller Loaded");var e={SelectedPercent:"2",PercentCollection:[{PercentId:"1",Name:"1"},{PercentId:"2",Name:"2"},{PercentId:"3",Name:"3"}]};var o=new n(e);this.getView().setModel(o)}}});return o});
