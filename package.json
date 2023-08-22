@@ -28,7 +28,8 @@
         "watch-pensiones.conf.cat.pensiones": "cds watch --open pensiones.conf.cat.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.tasa.rendimiento": "cds watch --open pensiones.conf.tasa.rendimiento/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.anti.porc.aport": "cds watch --open pensiones.conf.anti.porc.aport/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.apor.plan.prev.patri": "cds watch --open pensiones.conf.apor.plan.prev.patri/webapp/index.html?sap-ui-xx-viewCache=false"
+        "watch-pensiones.conf.apor.plan.prev.patri": "cds watch --open pensiones.conf.apor.plan.prev.patri/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.cat.der.adquiridos": "cds watch --open pensiones.conf.cat.der.adquiridos/webapp/index.html?sap-ui-xx-viewCache=false"
     },
     "cds": {
         "build": {
@@ -67,7 +68,8 @@
         "app/pensiones.conf.cat.pensiones",
         "app/pensiones.conf.tasa.rendimiento",
         "app/pensiones.conf.anti.porc.aport",
-        "app/pensiones.conf.apor.plan.prev.patri"
+        "app/pensiones.conf.apor.plan.prev.patri",
+        "app/pensiones.conf.cat.der.adquiridos"
     ],
     "devDependencies": {
         "@sap/ux-specification": "^1.108.12",

@@ -111,6 +111,10 @@ modules:
       - pensionesconfaporplanprevpatri.zip
       name: pensionesconfaporplanprevpatri
       target-path: resources/
+    - artifacts:
+      - pensionesconfcatderadquiridos.zip
+      name: pensionesconfcatderadquiridos
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -204,6 +208,16 @@ modules:
 - name: pensionesconfaporplanprevpatri
   type: html5
   path: app/pensiones.conf.apor.plan.prev.patri
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfcatderadquiridos
+  type: html5
+  path: app/pensiones.conf.cat.der.adquiridos
   build-parameters:
     build-result: dist
     builder: custom
