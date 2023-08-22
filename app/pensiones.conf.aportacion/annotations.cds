@@ -32,7 +32,7 @@ annotate service.Aportacion with @(
             Value : porcentajeMax,
         },
         ],
-    SelectionFields: [
+        SelectionFields: [
             antiguedadInicial,
             antiguedadFinal,
             porcentajeMax
