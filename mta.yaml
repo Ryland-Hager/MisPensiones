@@ -107,6 +107,10 @@ modules:
       - pensionesconfantiporcaport.zip
       name: pensionesconfantiporcaport
       target-path: resources/
+    - artifacts:
+      - pensionesconfaporplanprevpatri.zip
+      name: pensionesconfaporplanprevpatri
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -190,6 +194,16 @@ modules:
 - name: pensionesconfantiporcaport
   type: html5
   path: app/pensiones.conf.anti.porc.aport
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfaporplanprevpatri
+  type: html5
+  path: app/pensiones.conf.apor.plan.prev.patri
   build-parameters:
     build-result: dist
     builder: custom
