@@ -1,53 +1,83 @@
 using PensionesService as service from '../../srv/pensiones-service';
 
 annotate service.AntiPorcAport with @(
-    UI.LineItem : [
+    UI : {
+
+        HeaderInfo     : {
+            $Type         : 'UI.HeaderInfoType',
+            TypeName      : 'Aportacion',
+            TypeNamePlural: 'Aportacion',
+            Title         : {
+                $Type: 'UI.DataField',
+                Value: antiguedad
+            },
+            Description   : {
+                $Type: 'UI.DataField',
+                Value: fechaEfectiva
+            }
+        },
+        LineItem : [
         {
             $Type : 'UI.DataField',
+            Label : '{i18n>antiguedad}',
             Value : antiguedad,
         },
         {
             $Type : 'UI.DataField',
+            Label : '{i18n>fechaEfectiva}',
             Value : fechaEfectiva,
         },
         {
             $Type : 'UI.DataField',
+            Label : '{i18n>aportacionMaximaEmpleado}',
             Value : aportacionMaximaEmpleado,
         },
         {
             $Type : 'UI.DataField',
+            Label : '{i18n>aportacionVariableEmpresa}',
             Value : aportacionVariableEmpresa,
         },
         {
             $Type : 'UI.DataField',
+            Label : '{i18n>aportacionFijaEmpresa}',
             Value : aportacionFijaEmpresa,
         },
-    ]
+        ],
+        SelectionFields: [
+            antiguedad,
+            fechaEfectiva
+        ],
+    }
 );
 annotate service.AntiPorcAport with @(
     UI.FieldGroup #GeneratedGroup1 : {
         $Type : 'UI.FieldGroupType',
         Data : [
             {
-                $Type : 'UI.DataField',
-                Value : fechaEfectiva,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : antiguedad,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : aportacionMaximaEmpleado,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : aportacionVariableEmpresa,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : aportacionFijaEmpresa,
-            },
+            $Type : 'UI.DataField',
+            Label : '{i18n>antiguedad}',
+            Value : antiguedad,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>fechaEfectiva}',
+            Value : fechaEfectiva,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>aportacionMaximaEmpleado}',
+            Value : aportacionMaximaEmpleado,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>aportacionVariableEmpresa}',
+            Value : aportacionVariableEmpresa,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>aportacionFijaEmpresa}',
+            Value : aportacionFijaEmpresa,
+        },
         ],
     },
     UI.Facets : [

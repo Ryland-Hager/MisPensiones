@@ -84,7 +84,6 @@
             "css": []
         },
         "routing": {
-            "config": {},
             "routes": [
                 {
                     "pattern": ":?query:",
@@ -112,7 +111,8 @@
                                         "route": "AntiPorcAportObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },
@@ -127,6 +127,11 @@
                         }
                     }
                 }
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {}
             }
         }
     },
