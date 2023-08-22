@@ -10,3 +10,5 @@ using from './pensiones.conf.cobertura.medica/annotations';
 using from './pensiones.conf.asign.plan/annotations';
 
 using from './pensiones.conf.comp.plan/annotations';
+
+using from './pensiones.conf.cat.pensiones/annotations';

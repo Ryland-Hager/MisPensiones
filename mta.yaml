@@ -95,6 +95,10 @@ modules:
       - pensionesconfcompplan.zip
       name: pensionesconfcompplan
       target-path: resources/
+    - artifacts:
+      - pensionesconfcatpensiones.zip
+      name: pensionesconfcatpensiones
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -148,6 +152,16 @@ modules:
 - name: pensionesconfcompplan
   type: html5
   path: app/pensiones.conf.comp.plan
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfcatpensiones
+  type: html5
+  path: app/pensiones.conf.cat.pensiones
   build-parameters:
     build-result: dist
     builder: custom

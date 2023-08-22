@@ -24,7 +24,8 @@
         "watch-pensiones.conf.aportacion.empresa": "cds watch --open pensiones.conf.aportacion.empresa/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.cobertura.medica": "cds watch --open pensiones.conf.cobertura.medica/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.asign.plan": "cds watch --open pensiones.conf.asign.plan/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.comp.plan": "cds watch --open pensiones.conf.comp.plan/webapp/index.html?sap-ui-xx-viewCache=false"
+        "watch-pensiones.conf.comp.plan": "cds watch --open pensiones.conf.comp.plan/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.cat.pensiones": "cds watch --open pensiones.conf.cat.pensiones/webapp/index.html?sap-ui-xx-viewCache=false"
     },
     "cds": {
         "build": {
@@ -59,7 +60,8 @@
         "app/pensiones.conf.aportacion.empresa",
         "app/pensiones.conf.cobertura.medica",
         "app/pensiones.conf.asign.plan",
-        "app/pensiones.conf.comp.plan"
+        "app/pensiones.conf.comp.plan",
+        "app/pensiones.conf.cat.pensiones"
     ],
     "devDependencies": {
         "@sap/ux-specification": "^1.108.12",
