@@ -32,3 +32,11 @@ using from './pensiones.conf.pe.carta.fix.aux1/annotations';
 using from './pensiones.conf.pe.carta.fid.aux2/annotations';
 
 using from './pensiones.conf.pe.carta.fid.aux3/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.aux1/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.aux2/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.aux3/annotations';

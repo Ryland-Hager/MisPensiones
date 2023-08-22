@@ -139,6 +139,22 @@ modules:
       - pensionesconfpecartafidaux3.zip
       name: pensionesconfpecartafidaux3
       target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckee.zip
+      name: pensionesconfpecartareckee
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeeaux1.zip
+      name: pensionesconfpecartareckeeaux1
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeeaux2.zip
+      name: pensionesconfpecartareckeeaux2
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeeaux3.zip
+      name: pensionesconfpecartareckeeaux3
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -302,6 +318,46 @@ modules:
 - name: pensionesconfpecartafidaux3
   type: html5
   path: app/pensiones.conf.pe.carta.fid.aux3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckee
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeeaux1
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.aux1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeeaux2
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.aux2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeeaux3
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.aux3
   build-parameters:
     build-result: dist
     builder: custom

@@ -35,7 +35,11 @@
         "watch-pensiones.conf.pe.carta.fid": "cds watch --open pensiones.conf.pe.carta.fid/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.pe.carta.fix.aux1": "cds watch --open pensiones.conf.pe.carta.fix.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.pe.carta.fid.aux2": "cds watch --open pensiones.conf.pe.carta.fid.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.fid.aux3": "cds watch --open pensiones.conf.pe.carta.fid.aux3/webapp/index.html?sap-ui-xx-viewCache=false"
+        "watch-pensiones.conf.pe.carta.fid.aux3": "cds watch --open pensiones.conf.pe.carta.fid.aux3/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.rec.kee": "cds watch --open pensiones.conf.pe.carta.rec.kee/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.rec.kee.aux1": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.rec.kee.aux2": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.rec.kee.aux3": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux3/webapp/index.html?sap-ui-xx-viewCache=false"
     },
     "cds": {
         "build": {
@@ -81,7 +85,11 @@
         "app/pensiones.conf.pe.carta.fid",
         "app/pensiones.conf.pe.carta.fix.aux1",
         "app/pensiones.conf.pe.carta.fid.aux2",
-        "app/pensiones.conf.pe.carta.fid.aux3"
+        "app/pensiones.conf.pe.carta.fid.aux3",
+        "app/pensiones.conf.pe.carta.rec.kee",
+        "app/pensiones.conf.pe.carta.rec.kee.aux1",
+        "app/pensiones.conf.pe.carta.rec.kee.aux2",
+        "app/pensiones.conf.pe.carta.rec.kee.aux3"
     ],
     "devDependencies": {
         "@sap/ux-specification": "^1.108.12",
