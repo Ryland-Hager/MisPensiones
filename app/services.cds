@@ -12,3 +12,7 @@ using from './pensiones.conf.asign.plan/annotations';
 using from './pensiones.conf.comp.plan/annotations';
 
 using from './pensiones.conf.cat.pensiones/annotations';
+
+using from './pensiones.conf.tasa.rendimiento/annotations';
+
+using from './pensiones.conf.anti.porc.aport/annotations';
