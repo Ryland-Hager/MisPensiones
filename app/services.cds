@@ -24,3 +24,11 @@ using from './pensiones.conf.cat.der.adquiridos/annotations';
 using from './pensiones.conf.cat.ben.ret/annotations';
 
 using from './pensiones.conf.motivos.bajas/annotations';
+
+using from './pensiones.conf.pe.carta.fid/annotations';
+
+using from './pensiones.conf.pe.carta.fix.aux1/annotations';
+
+using from './pensiones.conf.pe.carta.fid.aux2/annotations';
+
+using from './pensiones.conf.pe.carta.fid.aux3/annotations';

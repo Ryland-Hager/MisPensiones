@@ -123,6 +123,22 @@ modules:
       - pensionesconfmotivosbajas.zip
       name: pensionesconfmotivosbajas
       target-path: resources/
+    - artifacts:
+      - pensionesconfpecartafid.zip
+      name: pensionesconfpecartafid
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartafixaux1.zip
+      name: pensionesconfpecartafixaux1
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartafidaux2.zip
+      name: pensionesconfpecartafidaux2
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartafidaux3.zip
+      name: pensionesconfpecartafidaux3
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -246,6 +262,46 @@ modules:
 - name: pensionesconfmotivosbajas
   type: html5
   path: app/pensiones.conf.motivos.bajas
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartafid
+  type: html5
+  path: app/pensiones.conf.pe.carta.fid
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartafixaux1
+  type: html5
+  path: app/pensiones.conf.pe.carta.fix.aux1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartafidaux2
+  type: html5
+  path: app/pensiones.conf.pe.carta.fid.aux2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartafidaux3
+  type: html5
+  path: app/pensiones.conf.pe.carta.fid.aux3
   build-parameters:
     build-result: dist
     builder: custom

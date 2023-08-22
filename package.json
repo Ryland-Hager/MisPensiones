@@ -31,7 +31,11 @@
         "watch-pensiones.conf.apor.plan.prev.patri": "cds watch --open pensiones.conf.apor.plan.prev.patri/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.cat.der.adquiridos": "cds watch --open pensiones.conf.cat.der.adquiridos/webapp/index.html?sap-ui-xx-viewCache=false",
         "watch-pensiones.conf.cat.ben.ret": "cds watch --open pensiones.conf.cat.ben.ret/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.motivos.bajas": "cds watch --open pensiones.conf.motivos.bajas/webapp/index.html?sap-ui-xx-viewCache=false"
+        "watch-pensiones.conf.motivos.bajas": "cds watch --open pensiones.conf.motivos.bajas/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.fid": "cds watch --open pensiones.conf.pe.carta.fid/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.fix.aux1": "cds watch --open pensiones.conf.pe.carta.fix.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.fid.aux2": "cds watch --open pensiones.conf.pe.carta.fid.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.pe.carta.fid.aux3": "cds watch --open pensiones.conf.pe.carta.fid.aux3/webapp/index.html?sap-ui-xx-viewCache=false"
     },
     "cds": {
         "build": {
@@ -73,7 +77,11 @@
         "app/pensiones.conf.apor.plan.prev.patri",
         "app/pensiones.conf.cat.der.adquiridos",
         "app/pensiones.conf.cat.ben.ret",
-        "app/pensiones.conf.motivos.bajas"
+        "app/pensiones.conf.motivos.bajas",
+        "app/pensiones.conf.pe.carta.fid",
+        "app/pensiones.conf.pe.carta.fix.aux1",
+        "app/pensiones.conf.pe.carta.fid.aux2",
+        "app/pensiones.conf.pe.carta.fid.aux3"
     ],
     "devDependencies": {
         "@sap/ux-specification": "^1.108.12",
