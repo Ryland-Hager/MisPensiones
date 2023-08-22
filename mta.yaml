@@ -83,6 +83,10 @@ modules:
       - pensionesconfaportacionempresa.zip
       name: pensionesconfaportacionempresa
       target-path: resources/
+    - artifacts:
+      - pensionesconfcoberturamedica.zip
+      name: pensionesconfcoberturamedica
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -106,6 +110,16 @@ modules:
 - name: pensionesconfaportacionempresa
   type: html5
   path: app/pensiones.conf.aportacion.empresa
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfcoberturamedica
+  type: html5
+  path: app/pensiones.conf.cobertura.medica
   build-parameters:
     build-result: dist
     builder: custom

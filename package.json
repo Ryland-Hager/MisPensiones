@@ -21,7 +21,8 @@
         "build": "rimraf resources mta_archives && mbt build --mtar archive",
         "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
         "watch-pensiones.conf.aportacion": "cds watch --open pensiones.conf.aportacion/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.aportacion.empresa": "cds watch --open pensiones.conf.aportacion.empresa/webapp/index.html?sap-ui-xx-viewCache=false"
+        "watch-pensiones.conf.aportacion.empresa": "cds watch --open pensiones.conf.aportacion.empresa/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.cobertura.medica": "cds watch --open pensiones.conf.cobertura.medica/webapp/index.html?sap-ui-xx-viewCache=false"
     },
     "cds": {
         "build": {
@@ -53,7 +54,8 @@
     "sapux": [
         "app/mis.pensiones",
         "app/pensiones.conf.aportacion",
-        "app/pensiones.conf.aportacion.empresa"
+        "app/pensiones.conf.aportacion.empresa",
+        "app/pensiones.conf.cobertura.medica"
     ],
     "devDependencies": {
         "@sap/ux-specification": "^1.108.12",
