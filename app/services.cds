@@ -20,3 +20,5 @@ using from './pensiones.conf.anti.porc.aport/annotations';
 using from './pensiones.conf.apor.plan.prev.patri/annotations';
 
 using from './pensiones.conf.cat.der.adquiridos/annotations';
+
+using from './pensiones.conf.cat.ben.ret/annotations';

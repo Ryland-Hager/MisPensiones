@@ -115,6 +115,10 @@ modules:
       - pensionesconfcatderadquiridos.zip
       name: pensionesconfcatderadquiridos
       target-path: resources/
+    - artifacts:
+      - pensionesconfcatbenret.zip
+      name: pensionesconfcatbenret
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -218,6 +222,16 @@ modules:
 - name: pensionesconfcatderadquiridos
   type: html5
   path: app/pensiones.conf.cat.der.adquiridos
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfcatbenret
+  type: html5
+  path: app/pensiones.conf.cat.ben.ret
   build-parameters:
     build-result: dist
     builder: custom
