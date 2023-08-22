@@ -22,3 +22,5 @@ using from './pensiones.conf.apor.plan.prev.patri/annotations';
 using from './pensiones.conf.cat.der.adquiridos/annotations';
 
 using from './pensiones.conf.cat.ben.ret/annotations';
+
+using from './pensiones.conf.motivos.bajas/annotations';

@@ -119,6 +119,10 @@ modules:
       - pensionesconfcatbenret.zip
       name: pensionesconfcatbenret
       target-path: resources/
+    - artifacts:
+      - pensionesconfmotivosbajas.zip
+      name: pensionesconfmotivosbajas
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -232,6 +236,16 @@ modules:
 - name: pensionesconfcatbenret
   type: html5
   path: app/pensiones.conf.cat.ben.ret
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfmotivosbajas
+  type: html5
+  path: app/pensiones.conf.motivos.bajas
   build-parameters:
     build-result: dist
     builder: custom
