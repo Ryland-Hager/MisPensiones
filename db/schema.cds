@@ -86,107 +86,107 @@ entity ESTADO_CUENTA {
 }
 
 entity APORTACION : managed {
-    key antiguedadInicial : Decimal(10, 2);
-    key antiguedadFinal : Decimal(10, 2);
-    porcentajeMax : Integer;
+    key antiguedadInicial : Decimal(10, 2) @Common.Label:'{i18n>antiguedadInicial}';
+    key antiguedadFinal : Decimal(10, 2)   @Common.Label:'{i18n>antiguedadFinal}';
+    porcentajeMax : Integer                @Common.Label:'{i18n>porcentajeMax}';
 }
 
 entity APORTACION_EMPRESA : managed {
-    key anosServicio : Decimal(10, 2);
-    adquisicionDerechos : Decimal(3, 2);
+    key anosServicio : Decimal(10, 2)      @Common.Label:'{i18n>anosServicio}';
+    adquisicionDerechos : Decimal(3, 2)    @Common.Label:'{i18n>adquisicionDerechos}';
 }
 
 entity COBERTURA_MEDICA : managed  {
-    key antiguedad : Decimal(10, 2);
-    aportacionPesos : Decimal(15, 2);
+    key antiguedad : Decimal(10, 2)        @Common.Label:'{i18n>antiguedad}';
+    aportacionPesos : Decimal(15, 2)       @Common.Label:'{i18n>aportacionPesos}';
 }
 
 entity ASIGN_PLAN_PENSIONES : managed {
-    key modulo : Decimal(15, 2);
-    key procesoID : Decimal(15, 2);
-    descripcion : Date;
-    orden : String(15);
-    secciones : String(15);
-    tipoElemento : String(15);
-    elemento : String(15);
-    setID : String(15);
-    cuenta : String(15);
-    descripcion2 : String(15);
-    valorLargo : String(15);
-    parametro1 : String(15);
-    parametro2 : String(15);
-    parametro3 : String(15);
-    parametro4 : String(15);
-    parametro5 : String(15);
-    parametro6 : String(15);
-    parametro7 : String(15);
-    parametro8 : String(15);
-    parametro9 : String(15);
-    parametro10 : String(15);
+    key modulo : Decimal(15, 2)            @Common.Label:'{i18n>modulo}';
+    key procesoID : Decimal(15, 2)         @Common.Label:'{i18n>procesoID}';
+    descripcion : Date                     @Common.Label:'{i18n>descripcion}';
+    orden : String(15)                     @Common.Label:'{i18n>orden}';
+    secciones : String(15)                 @Common.Label:'{i18n>secciones}';
+    tipoElemento : String(15)              @Common.Label:'{i18n>tipoElemento}';
+    elemento : String(15)                  @Common.Label:'{i18n>elemento}';
+    setID : String(15)                     @Common.Label:'{i18n>setID}';
+    cuenta : String(15)                    @Common.Label:'{i18n>cuenta}';
+    descripcion2 : String(15)              @Common.Label:'{i18n>descripcion2}';
+    valorLargo : String(15)                @Common.Label:'{i18n>valorLargo}';
+    parametro1 : String(15)                @Common.Label:'{i18n>parametro1}';
+    parametro2 : String(15)                @Common.Label:'{i18n>parametro2}';
+    parametro3 : String(15)                @Common.Label:'{i18n>parametro3}';
+    parametro4 : String(15)                @Common.Label:'{i18n>parametro4}';
+    parametro5 : String(15)                @Common.Label:'{i18n>parametro5}';
+    parametro6 : String(15)                @Common.Label:'{i18n>parametro6}';
+    parametro7 : String(15)                @Common.Label:'{i18n>parametro7}';
+    parametro8 : String(15)                @Common.Label:'{i18n>parametro8}';
+    parametro9 : String(15)                @Common.Label:'{i18n>parametro9}';
+    parametro10 : String(15)               @Common.Label:'{i18n>parametro10}';
 }
 
 entity COMP_PLAN_PENSIONES : managed {
-    key orden : String(15);
-    key seccion : String(15);
-    parametro1 : String(15);
+    key orden : String(15)         @Common.Label:'{i18n>orden}';
+    key seccion : String(15)       @Common.Label:'{i18n>seccion}';
+    parametro1 : String(15)        @Common.Label:'{i18n>parametro1}';
 }
 
 entity CAT_PENSIONES : managed {
-    key fechaEfectiva : Date;
-    key estado : String(15);
-    descripcion : String(30);
-    descripcionCorta : String(15);
-    horizonteInversion : String(15);
-    clavePizarra : String(15);
-    razonSocial : String(15);
-    rentaFija : Decimal(15, 2);
-    rentaVariable : Decimal(15, 2);
+    key fechaEfectiva : Date               @Common.Label:'{i18n>fechaEfectiva}';
+    key estado : String(15)                @Common.Label:'{i18n>estado}';
+    descripcion : String(30)               @Common.Label:'{i18n>descripcion}';
+    descripcionCorta : String(15)          @Common.Label:'{i18n>descripcionCorta}';
+    horizonteInversion : String(15)        @Common.Label:'{i18n>horizonteInversion}';
+    clavePizarra : String(15)              @Common.Label:'{i18n>clavePizarra}';
+    razonSocial : String(15)               @Common.Label:'{i18n>razonSocial}';
+    rentaFija : Decimal(15, 2)             @Common.Label:'{i18n>rentaFija}';
+    rentaVariable : Decimal(15, 2)         @Common.Label:'{i18n>rentaVariable}';
 }
 
 entity TASA_RENDIMIENTO : managed {
-    key ejercicio : Integer;
-    key mes : Integer;
-    rendimiento : Decimal(15, 2);
+    key ejercicio : Integer            @Common.Label:'{i18n>ejercicio}';
+    key mes : Integer                  @Common.Label:'{i18n>mes}';
+    rendimiento : Decimal(15, 2)       @Common.Label:'{i18n>antiguedadInicial}';
 }
 
 entity ANTI_PORC_APORT : managed {
-    key fechaEfectiva : Date;
-    key antiguedad : Decimal(15, 2);
-    aportacionMaximaEmpleado : Decimal(15, 2);
-    aportacionVariableEmpresa : Decimal(15, 2);
-    aportacionFijaEmpresa : Decimal(15, 2);
+    key fechaEfectiva : Date                       @Common.Label:'{i18n>fechaEfectiva}';
+    key antiguedad : Decimal(15, 2)                @Common.Label:'{i18n>antiguedad}';
+    aportacionMaximaEmpleado : Decimal(15, 2)      @Common.Label:'{i18n>aportacionMaximaEmpleado}';
+    aportacionVariableEmpresa : Decimal(15, 2)     @Common.Label:'{i18n>aportacionVariableEmpresa}';
+    aportacionFijaEmpresa : Decimal(15, 2)         @Common.Label:'{i18n>aportacionFijaEmpresa}';
 }
 
 entity APOR_PLAN_PREV_PATRI : managed {
-    key fechaEfectiva : Date;
-    key setID : String(15);
-    codigoNivel : Integer;
-    descripcion : String(15);
-    antiguedad : Decimal(10, 2);
-    porcentajeAportacion : Decimal(3, 2);
+    key fechaEfectiva : Date                   @Common.Label:'{i18n>fechaEfectiva}';
+    key setID : String(15)                     @Common.Label:'{i18n>setID}';
+    codigoNivel : Integer                      @Common.Label:'{i18n>codigoNivel}';
+    descripcion : String(15)                   @Common.Label:'{i18n>descripcion}';
+    antiguedad : Decimal(10, 2)                @Common.Label:'{i18n>antiguedad}';
+    porcentajeAportacion : Decimal(3, 2)       @Common.Label:'{i18n>porcentajeAportacion}';
 }
 
 entity CAT_DER_ADQUIRIDOS : managed {
-    key fechaEfectiva : Date;
-    key antiguedad : Decimal(10, 2);
-    bajaVoluntaria : Decimal(3, 2);
-    bajaInvoluntaria : Decimal(3, 2);
-    porcentajePlanPensiones : Decimal(3, 2);
-    porcentajePlanTOP : Decimal(3, 2);
+    key fechaEfectiva : Date                       @Common.Label:'{i18n>fechaEfectiva}';
+    key antiguedad : Decimal(10, 2)                @Common.Label:'{i18n>antiguedad}';
+    bajaVoluntaria : Decimal(3, 2)                 @Common.Label:'{i18n>bajaVoluntaria}';
+    bajaInvoluntaria : Decimal(3, 2)               @Common.Label:'{i18n>bajaInvoluntaria}';
+    porcentajePlanPensiones : Decimal(3, 2)        @Common.Label:'{i18n>porcentajePlanPensiones}';
+    porcentajePlanTOP : Decimal(3, 2)              @Common.Label:'{i18n>porcentajePlanTOP}';
 }
 
 entity CAT_BEN_RET : managed {
-    key fechaEfectiva : Date;
-    key estado : String(15);
-    descripcion : String(15);
-    beneficiosRetiro : String(15);
-    premisas : String(50);
+    key fechaEfectiva : Date               @Common.Label:'{i18n>fechaEfectiva}';
+    key estado : String(15)                @Common.Label:'{i18n>estado}';
+    descripcion : String(15)               @Common.Label:'{i18n>descripcion}';
+    beneficiosRetiro : String(15)          @Common.Label:'{i18n>beneficiosRetiro}';
+    premisas : String(50)                  @Common.Label:'{i18n>premisas}';
 }
 
 entity MOTIVOS_BAJAS : managed {
-    key motivoGlobal : String(15);
-    key locales : String(15);
-    porcentaje : Decimal(3, 2);
+    key motivoGlobal : String(15)          @Common.Label:'{i18n>motivoGlobal}';
+    key locales : String(15)               @Common.Label:'{i18n>locales}';
+    porcentaje : Decimal(3, 2)             @Common.Label:'{i18n>porcentaje}';
 }
 
 entity CARTA_FID : managed {

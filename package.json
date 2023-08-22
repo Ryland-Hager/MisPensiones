@@ -1,54 +1,62 @@
 {
-  "name": "MisPensiones",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^7",
-    "@sap/cds-hana": "^2",
-    "@sap/hana-client": "^2.17.22",
-    "express": "^4",
-    "@sap/xsenv": "^3.1.0",
-    "@sap/xssec": "^3.2.0",
-    "passport": "^0.4.1"
-  },
-  "scripts": {
-    "start": "cds-serve",
-    "watch-mis.pensiones": "cds watch --open mis.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
-    "undeploy": "cf undeploy MisPensiones --delete-services --delete-service-keys --delete-service-brokers",
-    "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
-  },
-  "cds": {
-    "build": {
-      "tasks": [
-        {
-          "for": "hana",
-          "dest": "../db"
+    "name": "MisPensiones",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap/cds": "^7",
+        "@sap/cds-hana": "^2",
+        "@sap/hana-client": "^2.17.22",
+        "@sap/xsenv": "^3.1.0",
+        "@sap/xssec": "^3.2.0",
+        "express": "^4",
+        "passport": "^0.4.1"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-mis.pensiones": "cds watch --open mis.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy MisPensiones --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "watch-pensiones.conf.aportacion": "cds watch --open pensiones.conf.aportacion/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-pensiones.conf.aportacion.empresa": "cds watch --open pensiones.conf.aportacion.empresa/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "cds": {
+        "build": {
+            "tasks": [
+                {
+                    "for": "hana",
+                    "dest": "../db"
+                },
+                {
+                    "for": "node-cf"
+                }
+            ]
         },
-        {
-          "for": "node-cf"
+        "hana": {
+            "deploy-format": "hdbtable"
+        },
+        "requires": {
+            "db": {
+                "kind": "hana"
+            },
+            "uaa": {
+                "kind": "xsuaa"
+            }
+        },
+        "fiori": {
+            "lean_draft": false
         }
-      ]
     },
-    "hana": {
-      "deploy-format": "hdbtable"
-    },
-    "requires": {
-      "db": {
-        "kind": "hana"
-      },
-      "uaa": {
-        "kind": "xsuaa"
-      }
-    },
-    "fiori": {
-      "lean_draft": false
+    "sapux": [
+        "app/mis.pensiones",
+        "app/pensiones.conf.aportacion",
+        "app/pensiones.conf.aportacion.empresa"
+    ],
+    "devDependencies": {
+        "@sap/ux-specification": "^1.108.12",
+        "rimraf": "^3.0.2"
     }
-  },
-  "sapux": [
-    "app/mis.pensiones"
-  ]
 }

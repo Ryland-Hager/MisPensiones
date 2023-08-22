@@ -14,19 +14,23 @@ modules:
     properties:
       srv-url: ${default-url}
   parameters:
-    host: ${appname}
     buildpack: nodejs_buildpack
+    host: ${appname}
   build-parameters:
-    ignore: [".env", "./node_modules"]
     builder: npm
+    ignore:
+    - .env
+    - ./node_modules
 - name: MisPensiones-db-deployer
   type: hdb
   path: db
   requires:
   - name: MisPensiones-db
   parameters:
-    ignore: [".env", "./node_modules"]
     buildpack: nodejs_buildpack
+    ignore:
+    - .env
+    - ./node_modules
 - name: MisPensiones-destination-content
   type: com.sap.application.content
   requires:
@@ -71,9 +75,37 @@ modules:
       - mispensiones.zip
       name: mispensiones
       target-path: resources/
+    - artifacts:
+      - pensionesconfaportacion.zip
+      name: pensionesconfaportacion
+      target-path: resources/
+    - artifacts:
+      - pensionesconfaportacionempresa.zip
+      name: pensionesconfaportacionempresa
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfaportacion
+  type: html5
+  path: app/pensiones.conf.aportacion
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfaportacionempresa
+  type: html5
+  path: app/pensiones.conf.aportacion.empresa
   build-parameters:
     build-result: dist
     builder: custom
@@ -100,18 +132,27 @@ resources:
             ProxyType: Internet
             Type: HTTP
             URL: https://ui5.sap.com
-          - Name: MisPensiones-app-api
-            Authentication: NoAuthentication
-            ProxyType: Internet
-            HTML5.ForwardAuthToken: true
+          - Authentication: NoAuthentication
             HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: MisPensiones-app-api
+            ProxyType: Internet
             Type: HTTP
-            URL: https://${appname}.${default-domain}  
+            URL: https://${appname}.${default-domain}
+          - Authentication: NoAuthentication
+            HTML5.DynamicDestination: true
+            HTML5.ForwardAuthToken: true
+            Name: MisPensiones-srv-api
+            ProxyType: Internet
+            Type: HTTP
+            URL: ~{srv-api/srv-url}
           existing_destinations_policy: update
       version: 1.0.0
     service: destination
     service-name: MisPensiones-destination-service
     service-plan: lite
+  requires:
+  - name: srv-api
 - name: MisPensiones_html_repo_host
   type: org.cloudfoundry.managed-service
   parameters:
@@ -126,9 +167,9 @@ resources:
     service-name: MisPensiones-xsuaa-service
     service-plan: application
 parameters:
+  appname: MisPensiones-fcf59e0ea4e1
   deploy_mode: html5-repo
   enable-parallel-deployments: true
-  appname: MisPensiones-fcf59e0ea4e1
 build-parameters:
   before-all:
   - builder: custom
