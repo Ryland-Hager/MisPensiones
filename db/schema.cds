@@ -89,16 +89,28 @@ entity APORTACION : managed {
     key antiguedadInicial : Decimal(10, 2) @Common.Label:'{i18n>antiguedadInicial}';
     key antiguedadFinal : Decimal(10, 2)   @Common.Label:'{i18n>antiguedadFinal}';
     porcentajeMax : Integer                @Common.Label:'{i18n>porcentajeMax}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity APORTACION_EMPRESA : managed {
     key anosServicio : Decimal(10, 2)      @Common.Label:'{i18n>anosServicio}';
     adquisicionDerechos : Decimal(3, 2)    @Common.Label:'{i18n>adquisicionDerechos}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity COBERTURA_MEDICA : managed  {
     key antiguedad : Decimal(10, 2)        @Common.Label:'{i18n>antiguedad}';
     aportacionPesos : Decimal(15, 2)       @Common.Label:'{i18n>aportacionPesos}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity ASIGN_PLAN_PENSIONES : managed {
@@ -123,12 +135,20 @@ entity ASIGN_PLAN_PENSIONES : managed {
     parametro8 : String(15)                @Common.Label:'{i18n>parametro8}';
     parametro9 : String(15)                @Common.Label:'{i18n>parametro9}';
     parametro10 : String(15)               @Common.Label:'{i18n>parametro10}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity COMP_PLAN_PENSIONES : managed {
     key orden : String(15)         @Common.Label:'{i18n>orden}';
     key seccion : String(15)       @Common.Label:'{i18n>seccion}';
     parametro1 : String(15)        @Common.Label:'{i18n>parametro1}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CAT_PENSIONES : managed {
@@ -141,12 +161,20 @@ entity CAT_PENSIONES : managed {
     razonSocial : String(15)               @Common.Label:'{i18n>razonSocial}';
     rentaFija : Decimal(15, 2)             @Common.Label:'{i18n>rentaFija}';
     rentaVariable : Decimal(15, 2)         @Common.Label:'{i18n>rentaVariable}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity TASA_RENDIMIENTO : managed {
     key ejercicio : Integer            @Common.Label:'{i18n>ejercicio}';
     key mes : Integer                  @Common.Label:'{i18n>mes}';
     rendimiento : Decimal(15, 2)       @Common.Label:'{i18n>antiguedadInicial}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity ANTI_PORC_APORT : managed {
@@ -155,6 +183,10 @@ entity ANTI_PORC_APORT : managed {
     aportacionMaximaEmpleado : Decimal(15, 2)      @Common.Label:'{i18n>aportacionMaximaEmpleado}';
     aportacionVariableEmpresa : Decimal(15, 2)     @Common.Label:'{i18n>aportacionVariableEmpresa}';
     aportacionFijaEmpresa : Decimal(15, 2)         @Common.Label:'{i18n>aportacionFijaEmpresa}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity APOR_PLAN_PREV_PATRI : managed {
@@ -164,6 +196,10 @@ entity APOR_PLAN_PREV_PATRI : managed {
     descripcion : String(15)                   @Common.Label:'{i18n>descripcion}';
     antiguedad : Decimal(10, 2)                @Common.Label:'{i18n>antiguedad}';
     porcentajeAportacion : Decimal(3, 2)       @Common.Label:'{i18n>porcentajeAportacion}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CAT_DER_ADQUIRIDOS : managed {
@@ -173,6 +209,10 @@ entity CAT_DER_ADQUIRIDOS : managed {
     bajaInvoluntaria : Decimal(3, 2)               @Common.Label:'{i18n>bajaInvoluntaria}';
     porcentajePlanPensiones : Decimal(3, 2)        @Common.Label:'{i18n>porcentajePlanPensiones}';
     porcentajePlanTOP : Decimal(3, 2)              @Common.Label:'{i18n>porcentajePlanTOP}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CAT_BEN_RET : managed {
@@ -181,12 +221,20 @@ entity CAT_BEN_RET : managed {
     descripcion : String(15)               @Common.Label:'{i18n>descripcion}';
     beneficiosRetiro : String(15)          @Common.Label:'{i18n>beneficiosRetiro}';
     premisas : String(50)                  @Common.Label:'{i18n>premisas}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity MOTIVOS_BAJAS : managed {
     key motivoGlobal : String(15)          @Common.Label:'{i18n>motivoGlobal}';
     key locales : String(15)               @Common.Label:'{i18n>locales}';
     porcentaje : Decimal(3, 2)             @Common.Label:'{i18n>porcentaje}';
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_FID : managed {
@@ -205,6 +253,10 @@ entity CARTA_FID : managed {
     lineaFirma : String(100);
     remitente : String(200);
     puesto : String(100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_FID_AUX1 {
@@ -212,12 +264,20 @@ entity CARTA_FID_AUX1 {
     compania : String(15);
     key nombre : String (100);
     cargo : String (100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_FID_AUX2 {
     key noCompania : String(10);
     key compania : String(15);
     key nombre : String (100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_FID_AUX3 : managed {
@@ -225,6 +285,10 @@ entity CARTA_FID_AUX3 : managed {
     contracto : Integer;
     fideicomiso : String(20);
     chequeraPropia : String(20);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE : managed {
@@ -243,6 +307,10 @@ entity CARTA_REC_KEE : managed {
     lineaFirma : String(100);
     remitente : String(200);
     puesto : String(100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_AUX1 {
@@ -250,6 +318,10 @@ entity CARTA_REC_KEE_AUX1 {
     key compania : String(15);
     key nombre : String (100);
     cargo : String (100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_AUX2 {
@@ -257,6 +329,10 @@ entity CARTA_REC_KEE_AUX2 {
     contracto : Integer;
     fideicomiso : String(20);
     chequeraPropia : String(20);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_AUX3 : managed {
@@ -264,6 +340,10 @@ entity CARTA_REC_KEE_AUX3 : managed {
     contracto : Integer;
     fideicomiso : String(20);
     chequeraPropia : String(20);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_FIL : managed {
@@ -282,6 +362,10 @@ entity CARTA_REC_KEE_FIL : managed {
     lineaFirma : String(100);
     remitente : String(200);
     puesto : String(100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_FIL_AUX1 {
@@ -289,12 +373,20 @@ entity CARTA_REC_KEE_FIL_AUX1 {
     compania : String(15);
     key nombre : String (100);
     cargo : String (100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_FIL_AUX2 {
     key noCompania : String(10);
     key compania : String(15);
     key nombre : String (100);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity CARTA_REC_KEE_FIL_AUX3 : managed {
@@ -304,6 +396,10 @@ entity CARTA_REC_KEE_FIL_AUX3 : managed {
     fondo : String(20);
     contrato : Integer;
     chequeraPropia : String(20);
+    createdAt   : Timestamp  @cds.on.insert: $now;
+    createdBy   : User       @cds.on.insert: $user;
+    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
 entity MAPAELEMENTOS : managed{
