@@ -9,85 +9,158 @@ annotate service.Empleados @(Capabilities: {
 
 annotate service.Aportacion @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.AportacionEmpresa @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.CoberturaMedica @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.AsignPlanPensiones @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.CompPlanPensiones @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.CatPensiones @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.TasaRendimiento @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.AntiPorcAport @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.AporPlanPrevPatri @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.CatDerAdquiridos @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.CatBenRet @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
 });
 
 annotate service.MotivosBajas @(Capabilities: {
 
-    Insertable: false,
+    Insertable: true,
     Updatable : true,
-    Deletable: false
+    Deletable: true
+});
+
+annotate service.CartaFid @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaFidAux1 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaFidAux2 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaFidAux3 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKee @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeAux1 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeAux2 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeAux3 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeFil @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeFilAux1 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeFilAux2 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
+});
+annotate service.CartaRecKeeFilAux3 @(Capabilities: {
+
+    Insertable: true,
+    Updatable : true,
+    Deletable: true
 });
 
