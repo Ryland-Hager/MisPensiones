@@ -40,3 +40,13 @@ using from './pensiones.conf.pe.carta.rec.kee.aux1/annotations';
 using from './pensiones.conf.pe.carta.rec.kee.aux2/annotations';
 
 using from './pensiones.conf.pe.carta.rec.kee.aux3/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.fil/annotations';
+
+using from './pensiones.conf.pe.kee.fil.aux1/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.fil.aux1/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.fil.aux2/annotations';
+
+using from './pensiones.conf.pe.carta.rec.kee.fil.aux3/annotations';

@@ -155,6 +155,26 @@ modules:
       - pensionesconfpecartareckeeaux3.zip
       name: pensionesconfpecartareckeeaux3
       target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeefil.zip
+      name: pensionesconfpecartareckeefil
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpekeefilaux1.zip
+      name: pensionesconfpekeefilaux1
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeefilaux1.zip
+      name: pensionesconfpecartareckeefilaux1
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeefilaux2.zip
+      name: pensionesconfpecartareckeefilaux2
+      target-path: resources/
+    - artifacts:
+      - pensionesconfpecartareckeefilaux3.zip
+      name: pensionesconfpecartareckeefilaux3
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -358,6 +378,46 @@ modules:
 - name: pensionesconfpecartareckeeaux3
   type: html5
   path: app/pensiones.conf.pe.carta.rec.kee.aux3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeefil
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.fil
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeefilaux1
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.fil.aux1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeefilaux2
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.fil.aux2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionesconfpecartareckeefilaux3
+  type: html5
+  path: app/pensiones.conf.pe.carta.rec.kee.fil.aux3
   build-parameters:
     build-result: dist
     builder: custom
