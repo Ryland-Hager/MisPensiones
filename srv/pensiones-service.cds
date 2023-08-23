@@ -3,27 +3,28 @@ using DATA.PE as DATA from '../db/schema';
 // @path: 'pension'
 @requires: 'authenticated-user'
 service PensionesService {
-    entity Empleados as select from DATA.EMPLEADOS {
-        *,
-        null as aportacionMaxima: Integer,
-        null as aportacionActualEmpleado: Decimal(15, 2),
-        null as aportacionProyeccionEmpleado: Decimal(15, 2), 
-        null as aportacionActualEmpresa: Decimal(15, 2), 
-        null as aportacionProyeccionEmpresa: Decimal(15, 2)     
-        } actions { 
+    // entity Empleados as select from DATA.EMPLEADOS {
+    //     *,
+    //     null as aportacionMaxima: Integer,
+    //     null as aportacionActualEmpleado: Decimal(15, 2),
+    //     null as aportacionProyeccionEmpleado: Decimal(15, 2), 
+    //     null as aportacionActualEmpresa: Decimal(15, 2), 
+    //     null as aportacionProyeccionEmpresa: Decimal(15, 2)     
+    //     } actions { 
+    //     action cambioPorcentaje(aportacionFutura: String(15));
+    //     action maxPorcentajeCheck() returns String(15);
+    //     action updateComment(comentarios: String(200));
+    // };
+    // annotate Empleados with @odata.draft.enabled;
+
+
+
+    entity Empleados as projection on DATA.EMPLEADOS actions {
         action cambioPorcentaje(aportacionFutura: String(15));
         action maxPorcentajeCheck() returns String(15);
         action updateComment(comentarios: String(200));
     };
     annotate Empleados with @odata.draft.enabled;
-
-
-
-    // entity Empleados as projection on DATA.EMPLEADOS actions {
-    //     action cambioPorcentaje(aportacionFutura: String(15));
-    //     action maxPorcentajeCheck() returns String(15);
-    //     action updateComment(comentarios: String(200));
-    // };
 
     @cds.persistence.skip
     @odata.singleton

@@ -4,84 +4,79 @@ namespace DATA.PE;
 
 //@cds.persistence.exists
 entity EMPLEADOS {
-    key ID                          : String(8)        @Common.Label: '{i18n>ID}';
-    key RFC                         : String(50)       @Common.Label:'{i18n>RFC}';
-    primerNombre                    : String(15)       @Common.Label:'{i18n>primerNombre}';
-    apellidoPaterno                 : String(15)       @Common.Label:'{i18n>apellidoPaterno}';
-    apellidoMaterno                 : String(15)       @Common.Label:'{i18n>apellidoMaterno}';
-    workdayID                       : String(9)        @Common.Label:'{i18n>workdayID}';
-    sueldoMensual                   : Decimal(15,2)    @Common.Label:'{i18n>sueldoMensual}';
-    tipoContracto                   : String(15)       @Common.Label:'{i18n>tipoContracto}';
-    grupoPago                       : String(15)       @Common.Label:'{i18n>grupoPago}';
-    fechaAntiguedad                 : Date             @Common.Label:'{i18n>fechaAntiguedad}';
-    fechaIngreso                    : Date             @Common.Label:'{i18n>fechaIngreso}';
-    fechaIncorporacion              : Date             @Common.Label:'{i18n>fechaIncorporacion}';
-    fechaActualizacion              : Date             @Common.Label:'{i18n>fechaActualizacion}';
-    fechaBeneficios                 : Date             @Common.Label:'{i18n>fechaBeneficios}';
-    contracto                       : String(15)       @Common.Label:'{i18n>contracto}';
-    colaborador                     : String(50)       @Common.Label:'{i18n>colaborador}';
-    puesto                          : String(50)       @Common.Label:'{i18n>puesto}';
-    empresaID                       : String(15)       @Common.Label:'{i18n>empresaID}';
-    empresaText                     : String(50)       @Common.Label:'{i18n>empresaText}';
-    marcaPlanTOP                    : Boolean          @Common.Label:'{i18n>marcaPlanTOP}';
-    marcaPlanMatch                  : Boolean          @Common.Label:'{i18n>marcaPlanMatch}';
-    marcaPPR                        : Boolean          @Common.Label:'{i18n>marcaPPR}';
-    fondoAhorro                     : String(50)       @Common.Label:'{i18n>fondoAhorro}';
-    aportacionFutura                : String(15)       @Common.Label:'{i18n>aportacionFutura}';
-    aportacionVigente               : String(15)       @Common.Label:'{i18n>apartacionVigente}';
-    fondoVive                       : String(15)       @Common.Label:'{i18n>fondoVive}';
-    coberturaMedica                 : String(15)       @Common.Label:'{i18n>coberturaMedica}';
-    medicoVitalicio                 : String(15)       @Common.Label:'{i18n>medicoVitalicio}';
-    planBeneficio                   : String(15)       @Common.Label:'{i18n>planBeneficio}';
-    puntajeAntiguedad               : String(15)       @Common.Label:'{i18n>puntajeAntiguedad}';
-    puntajeEdad                     : String(15)       @Common.Label:'{i18n>puntajeEdad}';
-    puntosActuales                  : String(15)       @Common.Label:'{i18n>puntosActuales}';
+    key ID                          : String(8)        @readonly    @Common.Label: '{i18n>ID}';
+    key RFC                         : String(50)       @readonly    @Common.Label:'{i18n>RFC}';
+    primerNombre                    : String(15)       @readonly    @Common.Label:'{i18n>primerNombre}';
+    apellidoPaterno                 : String(15)       @readonly    @Common.Label:'{i18n>apellidoPaterno}';
+    apellidoMaterno                 : String(15)       @readonly    @Common.Label:'{i18n>apellidoMaterno}';
+    workdayID                       : String(9)        @readonly    @Common.Label:'{i18n>workdayID}';
+    sueldoMensual                   : Decimal(15,2)    @readonly    @Common.Label:'{i18n>sueldoMensual}';
+    tipoContracto                   : String(15)       @readonly    @Common.Label:'{i18n>tipoContracto}';
+    grupoPago                       : String(15)       @readonly    @Common.Label:'{i18n>grupoPago}';
+    fechaAntiguedad                 : Date             @readonly    @Common.Label:'{i18n>fechaAntiguedad}';
+    fechaIngreso                    : Date             @readonly    @Common.Label:'{i18n>fechaIngreso}';
+    fechaIncorporacion              : Date             @readonly    @Common.Label:'{i18n>fechaIncorporacion}';
+    fechaActualizacion              : Date             @readonly    @Common.Label:'{i18n>fechaActualizacion}';
+    fechaBeneficios                 : Date             @readonly    @Common.Label:'{i18n>fechaBeneficios}';
+    contracto                       : String(15)       @readonly    @Common.Label:'{i18n>contracto}';
+    colaborador                     : String(50)       @readonly    @Common.Label:'{i18n>colaborador}';
+    puesto                          : String(50)       @readonly    @Common.Label:'{i18n>puesto}';
+    empresaID                       : String(15)       @readonly    @Common.Label:'{i18n>empresaID}';
+    empresaText                     : String(50)       @readonly    @Common.Label:'{i18n>empresaText}';
+    marcaPlanTOP                    : Boolean          @readonly    @Common.Label:'{i18n>marcaPlanTOP}';
+    marcaPlanMatch                  : Boolean          @readonly    @Common.Label:'{i18n>marcaPlanMatch}';
+    marcaPPR                        : Boolean          @readonly    @Common.Label:'{i18n>marcaPPR}';
+    fondoAhorro                     : String(50)       @readonly    @Common.Label:'{i18n>fondoAhorro}';
+    aportacionFutura                : String(15)       @readonly    @Common.Label:'{i18n>aportacionFutura}';
+    aportacionVigente               : String(15)       @readonly    @Common.Label:'{i18n>apartacionVigente}';
+    fondoVive                       : String(15)       @readonly    @Common.Label:'{i18n>fondoVive}';
+    coberturaMedica                 : String(15)       @readonly    @Common.Label:'{i18n>coberturaMedica}';
+    medicoVitalicio                 : String(15)       @readonly    @Common.Label:'{i18n>medicoVitalicio}';
+    planBeneficio                   : String(15)       @readonly    @Common.Label:'{i18n>planBeneficio}';
+    puntajeAntiguedad               : String(15)       @readonly    @Common.Label:'{i18n>puntajeAntiguedad}';
+    puntajeEdad                     : String(15)       @readonly    @Common.Label:'{i18n>puntajeEdad}';
+    puntosActuales                  : String(15)       @readonly    @Common.Label:'{i18n>puntosActuales}';
     comentarios                     : String(200)      @Common.Label:'{i18n>comentarios}';
-    anosMesesDiasAntiguedad         : String(15)       @Common.Label:'{i18n>anosMesesDiasAntiguedad}';
-    montoDerechosAdquiridos         : Decimal(15,2)    @Common.Label:'{i18n>montoDerechosAdquiridos}';
-    derechosAdquiridos              : Decimal(3,2)     @Common.Label:'{i18n>derechosAdquiridos}';
-    // aportacionMaxima                : Integer          @Common.Label:'{i18n>aportacionMaxima}';
+    anosMesesDiasAntiguedad         : String(15)       @readonly    @Common.Label:'{i18n>anosMesesDiasAntiguedad}';
+    montoDerechosAdquiridos         : Decimal(15,2)    @readonly    @Common.Label:'{i18n>montoDerechosAdquiridos}';
+    derechosAdquiridos              : Decimal(3,2)     @readonly    @Common.Label:'{i18n>derechosAdquiridos}';
     quieresAhorrar                  : Integer          @Common.Label:'{i18n>quieresAhorrar}';
-    // aportacionActualEmpleado        : Decimal(15,2)    @Common.Label:'{i18n>aportacionActualEmpleado}';
-    // aportacionProyeccionEmpleado    : Decimal(15, 2)   @Common.Label:'{i18n>aportacionProyeccionEmpleado}';
-    // aportacionActualEmpresa         : Decimal(15,2)    @Common.Label:'{i18n>aportacionActualEmpresa}';
-    // aportacionProyeccionEmpresa     : Decimal(15, 2)   @Common.Label:'{i18n>aportacionProyeccionEmpresa}';
-    fondoInversion                  : String(15)       @Common.Label:'{i18n>fondoInversion}';
-    razonSocial                     : String(50)       @Common.Label:'{i18n>razonSocial}';
-    clavePizarra                    : String(15)       @Common.Label:'{i18n>clavePizarra}';
-    horizonteInversion              : String(15)       @Common.Label:'{i18n>horizonteInversion}';
+    fondoInversion                  : String(15)       @readonly    @Common.Label:'{i18n>fondoInversion}';
+    razonSocial                     : String(50)       @readonly    @Common.Label:'{i18n>razonSocial}';
+    clavePizarra                    : String(15)       @readonly    @Common.Label:'{i18n>clavePizarra}';
+    horizonteInversion              : String(15)       @readonly    @Common.Label:'{i18n>horizonteInversion}';
+    aportacionMaxima                : Integer          @readonly    @Common.Label:'{i18n>aportacionMaxima}';
+    aportacionActualEmpleado        : Decimal(15,2)    @readonly    @Common.Label:'{i18n>aportacionActualEmpleado}';
+    aportacionProyeccionEmpleado    : Decimal(15, 2)   @readonly    @Common.Label:'{i18n>aportacionProyeccionEmpleado}';
+    aportacionActualEmpresa         : Decimal(15,2)    @readonly    @Common.Label:'{i18n>aportacionActualEmpresa}';
+    aportacionProyeccionEmpresa     : Decimal(15, 2)   @readonly    @Common.Label:'{i18n>aportacionProyeccionEmpresa}';
     cuentas                         : Association to many ESTADO_CUENTA on cuentas.empleadoID = $self.ID;
     allowedPercentages              : Association to many ALLOWEDPERCENTAGES on allowedPercentages.empleadoID = $self.ID;
-    // virtual aportacionMaxima        : Integer           @readonly;
-    // virtual aportacionActualEmpleado        : Decimal(15,2)     @readonly;
-    // virtual aportacionProyeccionEmpleado    : Decimal(15, 2)    @readonly;
-    // virtual aportacionActualEmpresa         : Decimal(15,2)     @readonly;
-    // virtual aportacionProyeccionEmpresa     : Decimal(15, 2)    @readonly;
 }
 
 entity ESTADO_CUENTA {
-    key cuentaID : String(8);
-    key cuentaRFC : String(18);
-    empresaID : String(15);
-    planTOP : Decimal(15,2);
-    porcentajePlanTOP : Decimal(15, 2);
-    AEMP : Decimal(15, 2);
-    rendimientosAEMP : Decimal(15, 2);
-    ACIA : Decimal(15, 2);
-    rendimientosACIA : Decimal(15, 2);
-    ADP : Decimal(15, 2);
-    rendimientosADP : Decimal(15, 2);
-    ACM : Decimal(15, 2);
-    rendimientosACM :Decimal(15, 2);
-    OBA : Decimal(15, 2);
-    rendimientosOBA : Decimal(15, 2);
-    ASP : Decimal(15, 2);
-    rendimientosASP : Decimal(15, 2);
-    AEXT : Decimal(15, 2);
-    rendimientosAEXT : Decimal(15, 2);
-    ASPCM : Decimal(15, 2);
-    rendimientosASPCM : Decimal(15, 2);
-    empleadoID : String(8);
+    key cuentaID : String(8);                   @readonly
+    key cuentaRFC : String(18);                 @readonly
+    empresaID : String(15);                     @readonly
+    planTOP : Decimal(15,2);                    @readonly
+    porcentajePlanTOP : Decimal(15, 2);         @readonly
+    AEMP : Decimal(15, 2);                      @readonly
+    rendimientosAEMP : Decimal(15, 2);          @readonly
+    ACIA : Decimal(15, 2);                      @readonly
+    rendimientosACIA : Decimal(15, 2);          @readonly
+    ADP : Decimal(15, 2);                       @readonly
+    rendimientosADP : Decimal(15, 2);           @readonly
+    ACM : Decimal(15, 2);                       @readonly
+    rendimientosACM :Decimal(15, 2);            @readonly
+    OBA : Decimal(15, 2);                       @readonly
+    rendimientosOBA : Decimal(15, 2);           @readonly
+    ASP : Decimal(15, 2);                       @readonly
+    rendimientosASP : Decimal(15, 2);           @readonly
+    AEXT : Decimal(15, 2);                      @readonly
+    rendimientosAEXT : Decimal(15, 2);          @readonly
+    ASPCM : Decimal(15, 2);                     @readonly
+    rendimientosASPCM : Decimal(15, 2);         @readonly
+    empleadoID : String(8);                     @readonly
     owner : Association to EMPLEADOS on owner.ID = empleadoID;
 }
 
