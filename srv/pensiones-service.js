@@ -1,6 +1,6 @@
 const cds = require('@sap/cds')
 const { PassThrough } = require("stream")
-const {calculateVirtualData, getEmployeeData, fillEmployeeData} = require('./utils/empleadoUtils')
+const {getEmployeeData, fillEmployeeData, getMaximumPercentage} = require('./utils/empleadoUtils')
 
 class PensionesService extends cds.ApplicationService {
     
@@ -20,41 +20,6 @@ class PensionesService extends cds.ApplicationService {
             const employeeData = await fillEmployeeData(Empleados, Aportacion, result); 
 
             return employeeData;
-
-            // //include Aportacion in function paramaters and abstract to employeeUtils
-            // let employeeData = await getEmployeeData(Empleados, req.data.ID, req.data.RFC);
-            // let porcentaje = await SELECT.from (Aportacion);
-
-            
-            // empleados.forEach(employee => {
-                
-            //     if(employee.ID == employeeData[0].ID) {
-
-            //         let sAntiguedad = employeeData[0].puntajeAntiguedad; 
-                    
-                    // for(var i = 0; i < porcentaje.length; i++) {
-            
-                    //     if((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad))
-                    //     {
-                    //         employee.aportacionMaxima = porcentaje[i].porcentajeMax;
-                    //     }
-                    // }
-
-            //         // employee.aportacionActualEmpleado = (parseFloat(employee.sueldoMensual) * (employee.aportacionMaxima * .01)).toFixed(2);
-            //         // employee.aportacionProyeccionEmpleado = (parseFloat(employee.sueldoMensual) * parseFloat(employee.aportacionVigente)).toFixed(2);
-            //         employee.aportacionActualEmpleado = Math.round((employeeData[0].sueldoMensual * (employee.aportacionMaxima * .01)));
-            //         employee.aportacionProyeccionEmpleado = Math.round((employeeData[0].sueldoMensual * employee.aportacionVigente));
-            //         employee.aportacionActualEmpresa = 26543.23;
-            //         employee.aportacionProyeccionEmpresa = 32859.19;
-
-
-                    // let options = Array.from(Array(employee.aportacionMaxima + 1).keys());
-
-                    // employee.allowedPercentages = options.map(percentage => ({
-                    //     percentage: percentage
-                    // }))
-            //     }
-            // })
         })
 
         this.on('READ', 'AllowedPercentages', async (req) => {
@@ -66,16 +31,18 @@ class PensionesService extends cds.ApplicationService {
                 
                 let ID = filterString.split("'")[1];
                 let RFC = filterString.split("'")[3];
-                let employeeData = await getEmployeeData(Empleados, ID, RFC);
-                
-                percentages = employeeData[0].allowedPercentages;
+                let Maximum = await getMaximumPercentage(Empleados, Aportacion, ID, RFC);
+
+                var options = [];
+
+                for (let i = 1; i <= Maximum; i++) {
+                    options.push(i); 
+                }
+
+                percentages = options.map(percentage => ({
+                    percentage: percentage
+                }))
             }
-            // percentages = [
-            //     {percentage: 1},
-            //     {percentage: 2},
-            //     {percentage: 3},
-            //     {percentage: 4}
-            // ]
 
             return percentages;
         })
