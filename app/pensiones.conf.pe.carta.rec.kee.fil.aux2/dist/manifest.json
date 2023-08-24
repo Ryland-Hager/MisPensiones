@@ -1,0 +1,141 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "pensiones.conf.pe.carta.rec.kee.fil.aux2",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.10.5",
+            "toolsId": "6d3093e3-2986-4026-b21f-1b7b5d940be3"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "odata/v4/pensiones/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.117.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "pensiones.conf.pe.carta.rec.kee.fil.aux2.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "config": {},
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "CartaRecKeeFilAux2List",
+                    "target": "CartaRecKeeFilAux2List"
+                },
+                {
+                    "pattern": "CartaRecKeeFilAux2({key}):?query:",
+                    "name": "CartaRecKeeFilAux2ObjectPage",
+                    "target": "CartaRecKeeFilAux2ObjectPage"
+                }
+            ],
+            "targets": {
+                "CartaRecKeeFilAux2List": {
+                    "type": "Component",
+                    "id": "CartaRecKeeFilAux2List",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "CartaRecKeeFilAux2",
+                            "variantManagement": "Page",
+                            "navigation": {
+                                "CartaRecKeeFilAux2": {
+                                    "detail": {
+                                        "route": "CartaRecKeeFilAux2ObjectPage"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "CartaRecKeeFilAux2ObjectPage": {
+                    "type": "Component",
+                    "id": "CartaRecKeeFilAux2ObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "editableHeaderContent": false,
+                            "entitySet": "CartaRecKeeFilAux2"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "MisPensiones"
+    }
+}

@@ -37,7 +37,7 @@ using from './pensiones.conf.pe.carta.rec.kee/annotations';
 
 using from './pensiones.conf.pe.carta.rec.kee.aux1/annotations';
 
-using from './pensions.conf.pe.carta.rec.kee.aux2/annotations';
+using from './pensiones.conf.pe.carta.rec.kee.aux2/annotations';
 
 using from './pensiones.conf.pe.carta.rec.kee.aux3/annotations';
 

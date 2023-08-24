@@ -5,7 +5,7 @@
     {
       "source": "^/odata/v4/pensiones/(.*)$",
       "target": "/odata/$1",
-      "destination": "MisPensiones-srv-api",
+      "destination": "MisPensiones-app-api",
       "authenticationType": "xsuaa",
       "csrfProtection": false
     },

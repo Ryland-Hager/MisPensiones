@@ -1,0 +1,1 @@
+sap.ui.define(["sap/fe/core/AppComponent"],function(e){"use strict";return e.extend("pensiones.conf.pe.carta.fid.aux3.Component",{metadata:{manifest:"json"}})});

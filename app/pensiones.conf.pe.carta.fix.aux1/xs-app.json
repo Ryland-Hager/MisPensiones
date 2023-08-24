@@ -4,6 +4,12 @@
   "routes": [
     {
       "source": "^/odata/v4/pensiones/(.*)$",
+      "destination": "MisPensiones-app-api",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    },
+    {
+      "source": "^/odata/v4/pensiones/(.*)$",
       "target": "/resources/$1",
       "authenticationType": "none",
       "destination": "ui5"
