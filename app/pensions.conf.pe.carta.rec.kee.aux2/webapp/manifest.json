@@ -1,7 +1,7 @@
 {
     "_version": "1.49.0",
     "sap.app": {
-        "id": "pensiones.conf.pe.carta.rec.kee.aux2",
+        "id": "pensions.conf.pe.carta.rec.kee.aux2",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -13,7 +13,7 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.10.5",
-            "toolsId": "a2e8b45c-dffd-428a-a868-f4e692cc04a6"
+            "toolsId": "ad0e5126-d9bd-428d-97b3-8f18ff12d6c2"
         },
         "dataSources": {
             "mainService": {
@@ -62,7 +62,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "pensiones.conf.pe.carta.rec.kee.aux2.i18n.i18n"
+                    "bundleName": "pensions.conf.pe.carta.rec.kee.aux2.i18n.i18n"
                 }
             },
             "": {
@@ -88,42 +88,43 @@
             "routes": [
                 {
                     "pattern": ":?query:",
-                    "name": "CartaFidAux2List",
-                    "target": "CartaFidAux2List"
+                    "name": "CartaRecKeeAux2List",
+                    "target": "CartaRecKeeAux2List"
                 },
                 {
-                    "pattern": "CartaFidAux2({key}):?query:",
-                    "name": "CartaFidAux2ObjectPage",
-                    "target": "CartaFidAux2ObjectPage"
+                    "pattern": "CartaRecKeeAux2({key}):?query:",
+                    "name": "CartaRecKeeAux2ObjectPage",
+                    "target": "CartaRecKeeAux2ObjectPage"
                 }
             ],
             "targets": {
-                "CartaFidAux2List": {
+                "CartaRecKeeAux2List": {
                     "type": "Component",
-                    "id": "CartaFidAux2List",
+                    "id": "CartaRecKeeAux2List",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "CartaFidAux2",
+                            "entitySet": "CartaRecKeeAux2",
                             "variantManagement": "Page",
                             "navigation": {
-                                "CartaFidAux2": {
+                                "CartaRecKeeAux2": {
                                     "detail": {
-                                        "route": "CartaFidAux2ObjectPage"
+                                        "route": "CartaRecKeeAux2ObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },
-                "CartaFidAux2ObjectPage": {
+                "CartaRecKeeAux2ObjectPage": {
                     "type": "Component",
-                    "id": "CartaFidAux2ObjectPage",
+                    "id": "CartaRecKeeAux2ObjectPage",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "CartaFidAux2"
+                            "entitySet": "CartaRecKeeAux2"
                         }
                     }
                 }

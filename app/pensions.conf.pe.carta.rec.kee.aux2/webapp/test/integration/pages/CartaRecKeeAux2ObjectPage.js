@@ -8,9 +8,9 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
 
     return new ObjectPage(
         {
-            appId: 'pensiones.conf.pe.carta.rec.kee.aux2',
-            componentId: 'CartaFidAux2ObjectPage',
-            entitySet: 'CartaFidAux2'
+            appId: 'pensions.conf.pe.carta.rec.kee.aux2',
+            componentId: 'CartaRecKeeAux2ObjectPage',
+            entitySet: 'CartaRecKeeAux2'
         },
         CustomPageDefinitions
     );

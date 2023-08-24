@@ -1,6 +1,6 @@
 const cds = require('@sap/cds')
 const { PassThrough } = require("stream")
-const {calculateVirtualData, getEmployeeData} = require('./utils/empleadoUtils')
+const {calculateVirtualData, getEmployeeData, fillEmployeeData} = require('./utils/empleadoUtils')
 
 class PensionesService extends cds.ApplicationService {
     
@@ -14,60 +14,70 @@ class PensionesService extends cds.ApplicationService {
 
         /* ------------------------Unbound Actions in List Report-----------------------------------------------------*/
 
-        this.after('READ', Empleados, async (empleados, req) => {
+        this.after('READ', 'Empleados', async (req) => {
 
-            //include Aportacion in function paramaters and abstract to employeeUtils
-            let employeeData = await getEmployeeData(Empleados, req.data.ID, req.data.RFC);
-            let porcentaje = await SELECT.from (Aportacion);
+            const result = req;
+            const employeeData = await fillEmployeeData(Empleados, Aportacion, result); 
+
+            return employeeData;
+
+            // //include Aportacion in function paramaters and abstract to employeeUtils
+            // let employeeData = await getEmployeeData(Empleados, req.data.ID, req.data.RFC);
+            // let porcentaje = await SELECT.from (Aportacion);
 
             
-            empleados.forEach(employee => {
+            // empleados.forEach(employee => {
                 
-                if(employee.ID == employeeData[0].ID) {
+            //     if(employee.ID == employeeData[0].ID) {
 
-                    let sAntiguedad = employee.puntajeAntiguedad; 
+            //         let sAntiguedad = employeeData[0].puntajeAntiguedad; 
                     
-                    for(var i = 0; i < porcentaje.length; i++) {
+                    // for(var i = 0; i < porcentaje.length; i++) {
             
-                        if((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad))
-                        {
-                            employee.aportacionMaxima = porcentaje[i].porcentajeMax;
-                        }
-                    }
+                    //     if((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad))
+                    //     {
+                    //         employee.aportacionMaxima = porcentaje[i].porcentajeMax;
+                    //     }
+                    // }
 
-                    // employee.aportacionActualEmpleado = (parseFloat(employee.sueldoMensual) * (employee.aportacionMaxima * .01)).toFixed(2);
-                    // employee.aportacionProyeccionEmpleado = (parseFloat(employee.sueldoMensual) * parseFloat(employee.aportacionVigente)).toFixed(2);
-                    employee.aportacionActualEmpleado = Math.round((employeeData[0].sueldoMensual * (employee.aportacionMaxima * .01)));
-                    employee.aportacionProyeccionEmpleado = Math.round((employeeData[0].sueldoMensual * employee.aportacionVigente));
-                    employee.aportacionActualEmpresa = 26543.23;
-                    employee.aportacionProyeccionEmpresa = 32859.19;
+            //         // employee.aportacionActualEmpleado = (parseFloat(employee.sueldoMensual) * (employee.aportacionMaxima * .01)).toFixed(2);
+            //         // employee.aportacionProyeccionEmpleado = (parseFloat(employee.sueldoMensual) * parseFloat(employee.aportacionVigente)).toFixed(2);
+            //         employee.aportacionActualEmpleado = Math.round((employeeData[0].sueldoMensual * (employee.aportacionMaxima * .01)));
+            //         employee.aportacionProyeccionEmpleado = Math.round((employeeData[0].sueldoMensual * employee.aportacionVigente));
+            //         employee.aportacionActualEmpresa = 26543.23;
+            //         employee.aportacionProyeccionEmpresa = 32859.19;
 
-                }
-            })
+
+                    // let options = Array.from(Array(employee.aportacionMaxima + 1).keys());
+
+                    // employee.allowedPercentages = options.map(percentage => ({
+                    //     percentage: percentage
+                    // }))
+            //     }
+            // })
         })
 
-        this.on('READ', 'MapaElementos', async (req) => {
+        this.on('READ', 'AllowedPercentages', async (req) => {
 
-            let concepts;
-            // let filterString = req.query.$filter;
+            let percentages = [];
+            let filterString = req._query.$filter;
 
-            // if (filterString) {
+            if (filterString) {
                 
-            //     let ID = filterString.split("'")[1];
-            //     let RFC = filterString.split("'")[3];
-            //     let employeeData = await getEmployeeData(Empleados, ID, RFC);
+                let ID = filterString.split("'")[1];
+                let RFC = filterString.split("'")[3];
+                let employeeData = await getEmployeeData(Empleados, ID, RFC);
                 
-            //     concepts = [
-            //         {anosMesesDiasAntiguedad: "1", comment: 'One'},
-            //         {anosMesesDiasAntiguedad: "2", comment: 'Two'}
-            //     ]
-            // }
-            concepts = [
-                {anosMesesDiasAntiguedad: '1' , comment: 'One'},
-                {anosMesesDiasAntiguedad: '2' , comment: 'Two'}
-            ]
+                percentages = employeeData[0].allowedPercentages;
+            }
+            // percentages = [
+            //     {percentage: 1},
+            //     {percentage: 2},
+            //     {percentage: 3},
+            //     {percentage: 4}
+            // ]
 
-            return concepts;
+            return percentages;
         })
         
 

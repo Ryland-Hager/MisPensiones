@@ -112,7 +112,8 @@
                                         "route": "CartaRecKeeFilObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },

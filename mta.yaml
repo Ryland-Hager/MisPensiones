@@ -175,6 +175,10 @@ modules:
       - pensionesconfpecartareckeefilaux3.zip
       name: pensionesconfpecartareckeefilaux3
       target-path: resources/
+    - artifacts:
+      - pensionsconfpecartareckeeaux2.zip
+      name: pensionsconfpecartareckeeaux2
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -418,6 +422,16 @@ modules:
 - name: pensionesconfpecartareckeefilaux3
   type: html5
   path: app/pensiones.conf.pe.carta.rec.kee.fil.aux3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: pensionsconfpecartareckeeaux2
+  type: html5
+  path: app/pensions.conf.pe.carta.rec.kee.aux2
   build-parameters:
     build-result: dist
     builder: custom

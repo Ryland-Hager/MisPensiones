@@ -52,20 +52,19 @@ annotate service.Empleados with @(
                     },
                 ]
             },
-            // {
-            //     $Type : 'UI.CollectionFacet',
-            //     Label : '{i18n>ProyeccionFondo}',
-            //     ID : 'ProyeccionFondo',
-            //     // Target : '@UI.FieldGroup#ProyeccionFondo'
-            //     Facets : [
-            //         {
-            //             $Type : 'UI.ReferenceFacet',
-            //             Label : '{i18n>ProyeccionFondoObj}',
-            //             ID : 'ProyeccionFondoFacet',
-            //             Target : '@UI.FieldGroup#ProyeccionFondo'
-            //         },
-            //     ]
-            // },
+            {
+                $Type : 'UI.CollectionFacet',
+                Label : '{i18n>ProyeccionFondo}',
+                ID : 'ProyeccionFondo',
+                Facets : [
+                    {
+                        $Type : 'UI.ReferenceFacet',
+                        Label : '{i18n>ProyeccionFondoObj}',
+                        ID : 'ProyeccionFondoFacet',
+                        Target : '@UI.FieldGroup#ProyeccionFondo'
+                    },
+                ]
+            },
         ],
         FieldGroup #DetalleEmpleado : {
             $Type : 'UI.FieldGroupType',
@@ -174,21 +173,8 @@ annotate service.Empleados with @(
                     $Type: 'UI.DataField',
                     Value: anosMesesDiasAntiguedad,
                 },
-                // {
-                //     $Type: 'UI.DataField',
-                //     Value: sueldoMensual,
-                // }
             ]
         },
-        // FieldGroup #Comentarios : {
-        //     $Type : 'UI.FieldGroupType',
-        //     Data : [
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: ID,
-        //         }
-        //     ]
-        // },
         FieldGroup #DerechosAdquiridos : {
             $Type : 'UI.FieldGroupType',
             Data : [
@@ -203,15 +189,6 @@ annotate service.Empleados with @(
                 }
             ]
         },
-        FieldGroup #EstadoCuenta : {
-            $Type : 'UI.FieldGroupType',
-            Data : [
-                {
-                    $Type: 'UI.DataField',
-                    Value: ID,
-                }
-            ]
-        },
         FieldGroup #PorcentajeAportacion : {
             $Type : 'UI.FieldGroupType',
             Data : [
@@ -223,7 +200,7 @@ annotate service.Empleados with @(
                 {
                     $Type: 'UI.DataField',
                     Label: '{i18n>quieresAhorrarObj}',
-                    Value: anosMesesDiasAntiguedad
+                    Value: quieresAhorrar
                 },
             ]
         },
@@ -257,49 +234,54 @@ annotate service.Empleados with @(
                 },
             ]
         },
-        // FieldGroup #ProyeccionFondo : {
-        //     $Type : 'UI.FieldGroupType',
-        //     Data : [
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: fondoInversion,
-        //         },
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: razonSocial,
-        //         },
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: clavePizarra,
-        //         },
-        //         {
-        //             $Type: 'UI.DataField',
-        //             Value: horizonteInversion,
-        //         },
-        //     ]
-        // }
+        FieldGroup #ProyeccionFondo : {
+            $Type : 'UI.FieldGroupType',
+            Data : [
+                {
+                    $Type: 'UI.DataField',
+                    Value: fondoInversion,
+                },
+                {
+                    $Type: 'UI.DataField',
+                    Value: razonSocial,
+                },
+                {
+                    $Type: 'UI.DataField',
+                    Value: clavePizarra,
+                },
+                {
+                    $Type: 'UI.DataField',
+                    Value: horizonteInversion,
+                },
+            ]
+        }
     }
 );
 
 annotate service.Empleados with {
-    anosMesesDiasAntiguedad @(Common: {
+    quieresAhorrar @(Common: {
         
-        Text : anosMesesDiasAntiguedad,
-        TextArrangement : #TextOnly,
+        // Text : ,
+        // TextArrangement : #TextOnly,
         ValueListWithFixedValues: true,
         ValueList : {
-            Label : 'anosMesesDiasAntiguedad',
+            Label : 'quieresAhorrar',
             // $Type : 'Common.ValueListType',
-            CollectionPath : 'MapaElementos',
+            CollectionPath : 'AllowedPercentages',
             Parameters : [
                 {
                     $Type : 'Common.ValueListParameterInOut',
-                    ValueListProperty : 'anosMesesDiasAntiguedad',
-                    LocalDataProperty : anosMesesDiasAntiguedad
+                    ValueListProperty : 'empleadoID',
+                    LocalDataProperty : ID
+                },
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    ValueListProperty : 'empleadoRFC',
+                    LocalDataProperty : RFC
                 },
                 {
                     $Type : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'comment'
+                    ValueListProperty : 'percentage'
                 },
             ]
         },

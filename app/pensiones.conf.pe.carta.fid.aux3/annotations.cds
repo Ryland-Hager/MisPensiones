@@ -4,8 +4,8 @@ annotate service.CartaFidAux3 with @(
     UI : {
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Carta Fiduciario - Aportaciones Empleados',
+            TypeNamePlural: 'Carta Fiduciario - Aportaciones Empleados',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: fondo
@@ -18,22 +18,22 @@ annotate service.CartaFidAux3 with @(
         LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'fondo',
+            Label : '{i18n>fondo}',
             Value : fondo,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'contracto',
+            Label : '{i18n>contracto}',
             Value : contracto,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'fideicomiso',
+            Label : '{i18n>fideicomiso}',
             Value : fideicomiso,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'chequeraPropia',
+            Label : '{i18n>chequeraPropia}',
             Value : chequeraPropia,
         },
     ]
@@ -45,22 +45,22 @@ annotate service.CartaFidAux3 with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'fondo',
+                Label : '{i18n>fondo}',
                 Value : fondo,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'contracto',
+                Label : '{i18n>contracto}',
                 Value : contracto,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'fideicomiso',
+                Label : '{i18n>fideicomiso}',
                 Value : fideicomiso,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'chequeraPropia',
+                Label : '{i18n>chequeraPropia}',
                 Value : chequeraPropia,
             },
         ],

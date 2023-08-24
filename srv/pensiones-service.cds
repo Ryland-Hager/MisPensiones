@@ -84,4 +84,5 @@ service PensionesService {
     annotate CartaRecKeeFilAux3 with @odata.draft.enabled;
 
     entity MapaElementos as projection on DATA.MAPAELEMENTOS;
+    entity AllowedPercentages as projection on DATA.ALLOWEDPERCENTAGES;
 }

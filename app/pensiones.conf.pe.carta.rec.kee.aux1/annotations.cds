@@ -1,28 +1,44 @@
 using PensionesService as service from '../../srv/pensiones-service';
 
 annotate service.CartaRecKeeAux1 with @(
-    UI.LineItem : [
+    UI : {
+
+        HeaderInfo     : {
+            $Type         : 'UI.HeaderInfoType',
+            TypeName      : 'Carta Recor Keeping Banco - Destinatarios',
+            TypeNamePlural: 'Carta Recor Keeping Banco - Destinatarios',
+            Title         : {
+                $Type: 'UI.DataField',
+                Value: nombre
+            },
+            Description   : {
+                $Type: 'UI.DataField',
+                Value: compania
+            }
+        },
+        LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'nombre',
+            Label : '{i18n>nombre}',
             Value : nombre,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'compania',
+            Label : '{i18n>compania}',
             Value : compania,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'noCompania',
+            Label : '{i18n>noCompania}',
             Value : noCompania,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'cargo',
+            Label : '{i18n>cargo}',
             Value : cargo,
         },
-    ]
+        ],
+    }
 );
 annotate service.CartaRecKeeAux1 with @(
     UI.FieldGroup #GeneratedGroup1 : {
@@ -30,22 +46,22 @@ annotate service.CartaRecKeeAux1 with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'noCompania',
+                Label : '{i18n>noCompania}',
                 Value : noCompania,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'compania',
+                Label : '{i18n>compania}',
                 Value : compania,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'nombre',
+                Label : '{i18n>nombre}',
                 Value : nombre,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'cargo',
+                Label : '{i18n>cargo}',
                 Value : cargo,
             },
         ],

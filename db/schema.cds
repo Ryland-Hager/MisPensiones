@@ -233,21 +233,21 @@ entity MOTIVOS_BAJAS : managed {
 }
 
 entity CARTA_FID : managed {
-    key noCompania : String(10);
-    compania : String(15);
-    logo : String(200);
-    fecha : String(200);
-    destinatario : String(200);
-    referencia : String(100);
-    parrafo1 : String(800);
-    parrafo2 : String(800); 
-    parrafo3 : String(800); 
-    parrafo4 : String(800); 
-    parrafo5 : String(800); 
-    firma : String(200);
-    lineaFirma : String(100);
-    remitente : String(200);
-    puesto : String(100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    compania : String(15)              @Common.Label:'{i18n>compania}';
+    logo : String(200)                 @Common.Label:'{i18n>logo}';
+    fecha : String(200)                @Common.Label:'{i18n>fecha}';
+    destinatario : String(200)         @Common.Label:'{i18n>destinatario}';
+    referencia : String(100)           @Common.Label:'{i18n>referencia}';
+    parrafo1 : String(800)             @Common.Label:'{i18n>parrafo1}';
+    parrafo2 : String(800)             @Common.Label:'{i18n>parrafo2}';
+    parrafo3 : String(800)             @Common.Label:'{i18n>parrafo3}';
+    parrafo4 : String(800)             @Common.Label:'{i18n>parrafo4}';
+    parrafo5 : String(800)             @Common.Label:'{i18n>parrafo5}';
+    firma : String(200)                @Common.Label:'{i18n>firma}';
+    lineaFirma : String(100)           @Common.Label:'{i18n>lineaFirma}';
+    remitente : String(200)            @Common.Label:'{i18n>remitente}';
+    puesto : String(100)               @Common.Label:'{i18n>puesto}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -255,10 +255,10 @@ entity CARTA_FID : managed {
 }
 
 entity CARTA_FID_AUX1 {
-    key noCompania : String(10);
-    compania : String(15);
-    key nombre : String (100);
-    cargo : String (100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    compania : String(15)              @Common.Label:'{i18n>String}';
+    key nombre : String (100)          @Common.Label:'{i18n>nombre}';
+    cargo : String (100)               @Common.Label:'{i18n>cargo}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -266,9 +266,9 @@ entity CARTA_FID_AUX1 {
 }
 
 entity CARTA_FID_AUX2 {
-    key noCompania : String(10);
-    key compania : String(15);
-    key nombre : String (100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    key compania : String(15)          @Common.Label:'{i18n>compania}';
+    key nombre : String (100)          @Common.Label:'{i18n>nombre}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -276,10 +276,10 @@ entity CARTA_FID_AUX2 {
 }
 
 entity CARTA_FID_AUX3 : managed {
-    key fondo : String(10);
-    contracto : Integer;
-    fideicomiso : String(20);
-    chequeraPropia : String(20);
+    key fondo : String(10)             @Common.Label:'{i18n>fondo}';
+    contracto : Integer                @Common.Label:'{i18n>contracto}';
+    fideicomiso : String(20)           @Common.Label:'{i18n>fideicomiso}';
+    chequeraPropia : String(20)        @Common.Label:'{i18n>chequeraPropia}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -287,21 +287,21 @@ entity CARTA_FID_AUX3 : managed {
 }
 
 entity CARTA_REC_KEE : managed {
-    key noCompania : String(10);
-    key compania : String(15);
-    logo : String(200);
-    fecha : String(200);
-    destinatario : String(200);
-    parrafo1 : String(800);
-    parrafo2 : String(800); 
-    parrafo3 : String(800); 
-    parrafo4 : String(800); 
-    parrafo5 : String(800); 
-    parrafo6 : String(800);
-    firma : String(200);
-    lineaFirma : String(100);
-    remitente : String(200);
-    puesto : String(100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    key compania : String(15)          @Common.Label:'{i18n>compania}';
+    logo : String(200)                 @Common.Label:'{i18n>logo}';
+    fecha : String(200)                @Common.Label:'{i18n>fecha}';
+    destinatario : String(200)         @Common.Label:'{i18n>destinatario}';
+    parrafo1 : String(800)             @Common.Label:'{i18n>parrafo1}';
+    parrafo2 : String(800)             @Common.Label:'{i18n>parrafo2}';
+    parrafo3 : String(800)             @Common.Label:'{i18n>parrafo3}';
+    parrafo4 : String(800)             @Common.Label:'{i18n>parrafo4}';
+    parrafo5 : String(800)             @Common.Label:'{i18n>parrafo5}';
+    parrafo6 : String(800)             @Common.Label:'{i18n>parrafo6}';
+    firma : String(200)                @Common.Label:'{i18n>firma}';
+    lineaFirma : String(100)           @Common.Label:'{i18n>lineaFirma}';
+    remitente : String(200)            @Common.Label:'{i18n>remitente}';
+    puesto : String(100)               @Common.Label:'{i18n>puesto}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -309,10 +309,10 @@ entity CARTA_REC_KEE : managed {
 }
 
 entity CARTA_REC_KEE_AUX1 {
-    key noCompania : String(10);
-    key compania : String(15);
-    key nombre : String (100);
-    cargo : String (100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    key compania : String(15)          @Common.Label:'{i18n>compania}';
+    key nombre : String (100)          @Common.Label:'{i18n>nombre}';
+    cargo : String (100)               @Common.Label:'{i18n>cargo}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -320,10 +320,10 @@ entity CARTA_REC_KEE_AUX1 {
 }
 
 entity CARTA_REC_KEE_AUX2 {
-    key fondo : String(10);
-    contracto : Integer;
-    fideicomiso : String(20);
-    chequeraPropia : String(20);
+    key fondo : String(10)             @Common.Label:'{i18n>fondo}';
+    contracto : Integer                @Common.Label:'{i18n>contracto}';
+    fideicomiso : String(20)           @Common.Label:'{i18n>fideicomiso}';
+    chequeraPropia : String(20)        @Common.Label:'{i18n>chequeraPropia}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -331,10 +331,10 @@ entity CARTA_REC_KEE_AUX2 {
 }
 
 entity CARTA_REC_KEE_AUX3 : managed {
-    key fondo : String(10);
-    contracto : Integer;
-    fideicomiso : String(20);
-    chequeraPropia : String(20);
+    key fondo : String(10)             @Common.Label:'{i18n>fondo}';
+    contracto : Integer                @Common.Label:'{i18n>contracto}';
+    fideicomiso : String(20)           @Common.Label:'{i18n>fideicomiso}';
+    chequeraPropia : String(20)        @Common.Label:'{i18n>chequeraPropia}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -342,21 +342,21 @@ entity CARTA_REC_KEE_AUX3 : managed {
 }
 
 entity CARTA_REC_KEE_FIL : managed {
-    key noCompania : String(10);
-    compania : String(15);
-    logo : String(200);
-    fecha : String(200);
-    destinatario : String(200);
-    parrafo1 : String(800);
-    parrafo2 : String(800); 
-    parrafo3 : String(800); 
-    parrafo4 : String(800); 
-    parrafo5 : String(800); 
-    parrafo6 : String(800);
-    firma : String(200);
-    lineaFirma : String(100);
-    remitente : String(200);
-    puesto : String(100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    compania : String(15)              @Common.Label:'{i18n>compania}';
+    logo : String(200)                 @Common.Label:'{i18n>logo}';
+    fecha : String(200)                @Common.Label:'{i18n>fecha}';
+    destinatario : String(200)         @Common.Label:'{i18n>destinatario}';
+    parrafo1 : String(800)             @Common.Label:'{i18n>parrafo1}';
+    parrafo2 : String(800)             @Common.Label:'{i18n>parrafo2}';
+    parrafo3 : String(800)             @Common.Label:'{i18n>parrafo3}';
+    parrafo4 : String(800)             @Common.Label:'{i18n>parrafo4}';
+    parrafo5 : String(800)             @Common.Label:'{i18n>parrafo5}';
+    parrafo6 : String(800)             @Common.Label:'{i18n>parrafo6}';
+    firma : String(200)                @Common.Label:'{i18n>firma}';
+    lineaFirma : String(100)           @Common.Label:'{i18n>lineaFirma}';
+    remitente : String(200)            @Common.Label:'{i18n>remitente}';
+    puesto : String(100)               @Common.Label:'{i18n>puesto}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -364,10 +364,10 @@ entity CARTA_REC_KEE_FIL : managed {
 }
 
 entity CARTA_REC_KEE_FIL_AUX1 {
-    key noCompania : String(10);
-    compania : String(15);
-    key nombre : String (100);
-    cargo : String (100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    compania : String(15)              @Common.Label:'{i18n>compania}';
+    key nombre : String (100)          @Common.Label:'{i18n>nombre}';
+    cargo : String (100)               @Common.Label:'{i18n>cargo}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -375,9 +375,9 @@ entity CARTA_REC_KEE_FIL_AUX1 {
 }
 
 entity CARTA_REC_KEE_FIL_AUX2 {
-    key noCompania : String(10);
-    key compania : String(15);
-    key nombre : String (100);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    key compania : String(15)          @Common.Label:'{i18n>compania}';
+    key nombre : String (100)          @Common.Label:'{i18n>nombre}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -385,12 +385,12 @@ entity CARTA_REC_KEE_FIL_AUX2 {
 }
 
 entity CARTA_REC_KEE_FIL_AUX3 : managed {
-    key noCompania : String(10);
-    compania : Integer;
-    aportacion : String(20);
-    fondo : String(20);
-    contrato : Integer;
-    chequeraPropia : String(20);
+    key noCompania : String(10)        @Common.Label:'{i18n>noCompania}';
+    compania : Integer                 @Common.Label:'{i18n>compania}';
+    aportacion : String(20)            @Common.Label:'{i18n>aportacion}';
+    fondo : String(20)                 @Common.Label:'{i18n>fondo}';
+    contrato : Integer                 @Common.Label:'{i18n>contrato}';
+    chequeraPropia : String(20)        @Common.Label:'{i18n>chequeraPropia}';
     createdAt   : Timestamp  @cds.on.insert: $now;
     createdBy   : User       @cds.on.insert: $user;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
@@ -410,6 +410,7 @@ entity MAPAELEMENTOS : managed{
 }
 
 entity ALLOWEDPERCENTAGES {
-    key allowedPercentages : Integer;
+    key percentage : Integer;
     empleadoID : String(8);
+    empleadoRFC : String(50);
 }

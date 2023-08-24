@@ -1,33 +1,49 @@
 using PensionesService as service from '../../srv/pensiones-service';
 
 annotate service.CartaRecKeeFil with @(
-    UI.LineItem : [
+    UI : {
+
+        HeaderInfo     : {
+            $Type         : 'UI.HeaderInfoType',
+            TypeName      : 'Carta Recor Keeping Filiales',
+            TypeNamePlural: 'Carta Recor Keeping Filiales',
+            Title         : {
+                $Type: 'UI.DataField',
+                Value: noCompania
+            },
+            Description   : {
+                $Type: 'UI.DataField',
+                Value: compania
+            }
+        },
+        LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'noCompania',
+            Label : '{i18n>noCompania}',
             Value : noCompania,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'compania',
+            Label : '{i18n>compania}',
             Value : compania,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'logo',
+            Label : '{i18n>logo}',
             Value : logo,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'fecha',
+            Label : '{i18n>fecha}',
             Value : fecha,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'destinatario',
+            Label : '{i18n>destinatario}',
             Value : destinatario,
         },
-    ]
+        ],
+    }
 );
 annotate service.CartaRecKeeFil with @(
     UI.FieldGroup #GeneratedGroup1 : {
@@ -35,77 +51,77 @@ annotate service.CartaRecKeeFil with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'noCompania',
+                Label : '{i18n>noCompania}',
                 Value : noCompania,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'compania',
+                Label : '{i18n>compania}',
                 Value : compania,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'logo',
+                Label : '{i18n>logo}',
                 Value : logo,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'fecha',
+                Label : '{i18n>fecha}',
                 Value : fecha,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'destinatario',
+                Label : '{i18n>destinatario}',
                 Value : destinatario,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'parrafo1',
+                Label : '{i18n>parrafo1}',
                 Value : parrafo1,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'parrafo2',
+                Label : '{i18n>parrafo2}',
                 Value : parrafo2,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'parrafo3',
+                Label : '{i18n>parrafo3}',
                 Value : parrafo3,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'parrafo4',
+                Label : '{i18n>parrafo4}',
                 Value : parrafo4,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'parrafo5',
+                Label : '{i18n>parrafo5}',
                 Value : parrafo5,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'parrafo6',
+                Label : '{i18n>parrafo6}',
                 Value : parrafo6,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'firma',
+                Label : '{i18n>firma}',
                 Value : firma,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'lineaFirma',
+                Label : '{i18n>lineaFirma}',
                 Value : lineaFirma,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'remitente',
+                Label : '{i18n>remitente}',
                 Value : remitente,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'puesto',
+                Label : '{i18n>puesto}',
                 Value : puesto,
             },
         ],

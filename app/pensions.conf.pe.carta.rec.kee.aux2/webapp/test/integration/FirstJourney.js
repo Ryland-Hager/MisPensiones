@@ -10,18 +10,18 @@ sap.ui.define([
             opaTest("Start application", function (Given, When, Then) {
                 Given.iStartMyApp();
 
-                Then.onTheCartaFidAux2List.iSeeThisPage();
+                Then.onTheCartaRecKeeAux2List.iSeeThisPage();
 
             });
 
 
             opaTest("Navigate to ObjectPage", function (Given, When, Then) {
                 // Note: this test will fail if the ListReport page doesn't show any data
-                When.onTheCartaFidAux2List.onFilterBar().iExecuteSearch();
-                Then.onTheCartaFidAux2List.onTable().iCheckRows();
+                When.onTheCartaRecKeeAux2List.onFilterBar().iExecuteSearch();
+                Then.onTheCartaRecKeeAux2List.onTable().iCheckRows();
 
-                When.onTheCartaFidAux2List.onTable().iPressRow(0);
-                Then.onTheCartaFidAux2ObjectPage.iSeeThisPage();
+                When.onTheCartaRecKeeAux2List.onTable().iPressRow(0);
+                Then.onTheCartaRecKeeAux2ObjectPage.iSeeThisPage();
 
             });
 

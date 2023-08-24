@@ -3,7 +3,7 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/odata/(.*)$",
+      "source": "^/odata/v4/pensiones/(.*)$",
       "target": "/odata/$1",
       "destination": "MisPensiones-srv-api",
       "authenticationType": "xsuaa",

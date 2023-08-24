@@ -3,7 +3,7 @@ sap.ui.define(
     function (Component) {
         "use strict";
 
-        return Component.extend("pensiones.conf.pe.carta.rec.kee.aux2.Component", {
+        return Component.extend("pensions.conf.pe.carta.rec.kee.aux2.Component", {
             metadata: {
                 manifest: "json"
             }

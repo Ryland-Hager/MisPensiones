@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Tue Aug 22 2023 14:44:56 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Wed Aug 23 2023 22:36:17 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.10.5|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -16,7 +16,7 @@
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
-|**Main Entity**<br>CartaFidAux3|
+|**Main Entity**<br>CartaRecKeeAux3|
 
 ## pensiones.conf.pe.carta.rec.kee.aux3
 

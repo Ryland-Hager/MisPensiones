@@ -112,7 +112,8 @@
                                         "route": "CartaRecKeeAux1ObjectPage"
                                     }
                                 }
-                            }
+                            },
+                            "initialLoad": "Enabled"
                         }
                     }
                 },

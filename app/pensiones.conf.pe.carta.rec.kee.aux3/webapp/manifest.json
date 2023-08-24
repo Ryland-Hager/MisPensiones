@@ -13,7 +13,7 @@
         "sourceTemplate": {
             "id": "@sap/generator-fiori:lrop",
             "version": "1.10.5",
-            "toolsId": "6c4627c5-241c-4202-8b04-960e8e8933fe"
+            "toolsId": "71c0e32f-d88e-46b3-b165-c214c75bc696"
         },
         "dataSources": {
             "mainService": {
@@ -88,42 +88,42 @@
             "routes": [
                 {
                     "pattern": ":?query:",
-                    "name": "CartaFidAux3List",
-                    "target": "CartaFidAux3List"
+                    "name": "CartaRecKeeAux3List",
+                    "target": "CartaRecKeeAux3List"
                 },
                 {
-                    "pattern": "CartaFidAux3({key}):?query:",
-                    "name": "CartaFidAux3ObjectPage",
-                    "target": "CartaFidAux3ObjectPage"
+                    "pattern": "CartaRecKeeAux3({key}):?query:",
+                    "name": "CartaRecKeeAux3ObjectPage",
+                    "target": "CartaRecKeeAux3ObjectPage"
                 }
             ],
             "targets": {
-                "CartaFidAux3List": {
+                "CartaRecKeeAux3List": {
                     "type": "Component",
-                    "id": "CartaFidAux3List",
+                    "id": "CartaRecKeeAux3List",
                     "name": "sap.fe.templates.ListReport",
                     "options": {
                         "settings": {
-                            "entitySet": "CartaFidAux3",
+                            "entitySet": "CartaRecKeeAux3",
                             "variantManagement": "Page",
                             "navigation": {
-                                "CartaFidAux3": {
+                                "CartaRecKeeAux3": {
                                     "detail": {
-                                        "route": "CartaFidAux3ObjectPage"
+                                        "route": "CartaRecKeeAux3ObjectPage"
                                     }
                                 }
                             }
                         }
                     }
                 },
-                "CartaFidAux3ObjectPage": {
+                "CartaRecKeeAux3ObjectPage": {
                     "type": "Component",
-                    "id": "CartaFidAux3ObjectPage",
+                    "id": "CartaRecKeeAux3ObjectPage",
                     "name": "sap.fe.templates.ObjectPage",
                     "options": {
                         "settings": {
                             "editableHeaderContent": false,
-                            "entitySet": "CartaFidAux3"
+                            "entitySet": "CartaRecKeeAux3"
                         }
                     }
                 }

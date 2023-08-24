@@ -1,24 +1,24 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Tue Aug 22 2023 14:42:02 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Wed Aug 23 2023 22:32:52 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.10.5|
 |**Generation Platform**<br>SAP Business Application Studio|
 |**Template Used**<br>List Report Page V4|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/pensiones/
-|**Module Name**<br>pensiones.conf.pe.carta.rec.kee.aux2|
-|**Application Title**<br>Configuracion Carta Recor Keeping Banco - Aportaciones Empleados|
+|**Module Name**<br>pensions.conf.pe.carta.rec.kee.aux2|
+|**Application Title**<br>Configuraciones Carta Recor Keeping Banco - Aportaciones Empleados|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.117.0|
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|
-|**Main Entity**<br>CartaFidAux2|
+|**Main Entity**<br>CartaRecKeeAux2|
 
-## pensiones.conf.pe.carta.rec.kee.aux2
+## pensions.conf.pe.carta.rec.kee.aux2
 
 A Fiori application.
 
@@ -26,7 +26,7 @@ A Fiori application.
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply start your CAP project and navigate to the following location in your browser:
 
-http://localhost:4004/pensiones.conf.pe.carta.rec.kee.aux2/webapp/index.html
+http://localhost:4004/pensions.conf.pe.carta.rec.kee.aux2/webapp/index.html
 
 #### Pre-requisites:
 

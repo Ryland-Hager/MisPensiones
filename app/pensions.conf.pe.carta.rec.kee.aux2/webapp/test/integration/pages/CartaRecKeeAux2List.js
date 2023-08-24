@@ -8,9 +8,9 @@ sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
 
     return new ListReport(
         {
-            appId: 'pensiones.conf.pe.carta.rec.kee.aux2',
-            componentId: 'CartaFidAux2List',
-            entitySet: 'CartaFidAux2'
+            appId: 'pensions.conf.pe.carta.rec.kee.aux2',
+            componentId: 'CartaRecKeeAux2List',
+            entitySet: 'CartaRecKeeAux2'
         },
         CustomPageDefinitions
     );

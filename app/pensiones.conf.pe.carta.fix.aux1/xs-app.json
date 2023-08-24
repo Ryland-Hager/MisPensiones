@@ -3,7 +3,7 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/resources/(.*)$",
+      "source": "^/odata/v4/pensiones/(.*)$",
       "target": "/resources/$1",
       "authenticationType": "none",
       "destination": "ui5"

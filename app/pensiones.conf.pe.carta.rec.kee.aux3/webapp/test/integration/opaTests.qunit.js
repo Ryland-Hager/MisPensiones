@@ -2,10 +2,10 @@ sap.ui.require(
     [
         'sap/fe/test/JourneyRunner',
         'pensiones/conf/pe/carta/rec/kee/aux3/test/integration/FirstJourney',
-		'pensiones/conf/pe/carta/rec/kee/aux3/test/integration/pages/CartaFidAux3List',
-		'pensiones/conf/pe/carta/rec/kee/aux3/test/integration/pages/CartaFidAux3ObjectPage'
+		'pensiones/conf/pe/carta/rec/kee/aux3/test/integration/pages/CartaRecKeeAux3List',
+		'pensiones/conf/pe/carta/rec/kee/aux3/test/integration/pages/CartaRecKeeAux3ObjectPage'
     ],
-    function(JourneyRunner, opaJourney, CartaFidAux3List, CartaFidAux3ObjectPage) {
+    function(JourneyRunner, opaJourney, CartaRecKeeAux3List, CartaRecKeeAux3ObjectPage) {
         'use strict';
         var JourneyRunner = new JourneyRunner({
             // start index.html in web folder
@@ -16,8 +16,8 @@ sap.ui.require(
         JourneyRunner.run(
             {
                 pages: { 
-					onTheCartaFidAux3List: CartaFidAux3List,
-					onTheCartaFidAux3ObjectPage: CartaFidAux3ObjectPage
+					onTheCartaRecKeeAux3List: CartaRecKeeAux3List,
+					onTheCartaRecKeeAux3ObjectPage: CartaRecKeeAux3ObjectPage
                 }
             },
             opaJourney.run

@@ -5,8 +5,8 @@ annotate service.CartaFidAux1 with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Carta Fiduciario - Destinatarios',
+            TypeNamePlural: 'Carta Fiduciario - Destinatarios',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: noCompania
@@ -19,17 +19,17 @@ annotate service.CartaFidAux1 with @(
         LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'nombre',
+            Label : '{i18n>nombre}',
             Value : nombre,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'noCompania',
+            Label : '{i18n>noCompania}',
             Value : noCompania,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'compania',
+            Label : '{i18n>compania}',
             Value : compania,
         },
     ],
@@ -41,22 +41,22 @@ annotate service.CartaFidAux1 with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'noCompania',
+                Label : '{i18n>noCompania}',
                 Value : noCompania,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'compania',
+                Label : '{i18n>compania}',
                 Value : compania,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'nombre',
+                Label : '{i18n>nombre}',
                 Value : nombre,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'cargo',
+                Label : '{i18n>cargo}',
                 Value : cargo,
             },
         ],
