@@ -5,8 +5,8 @@ annotate service.CatDerAdquiridos with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Catálogo de derechos adquiridos',
+            TypeNamePlural: 'Catálogo de derechos adquiridos',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: antiguedad

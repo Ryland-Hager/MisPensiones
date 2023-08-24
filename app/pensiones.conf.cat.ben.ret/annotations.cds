@@ -5,8 +5,8 @@ annotate service.CatBenRet with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Catálogo de beneficios al retiro',
+            TypeNamePlural: 'Catálogo de beneficios al retiro',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: estado

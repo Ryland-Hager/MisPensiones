@@ -1,7 +1,7 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Wed Aug 23 2023 22:32:52 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Thu Aug 24 2023 17:00:51 GMT+0000 (Coordinated Universal Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
 |**App Generator Version**<br>1.10.5|
 |**Generation Platform**<br>SAP Business Application Studio|
@@ -9,10 +9,10 @@
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/pensiones/
 |**Module Name**<br>pensions.conf.pe.carta.rec.kee.aux2|
-|**Application Title**<br>Configuraciones Carta Recor Keeping Banco - Aportaciones Empleados|
+|**Application Title**<br>Configuracion Carta Recor Keeping Banco - Aportaciones Empleados|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.117.0|
+|**UI5 Version**<br>1.117.1|
 |**Enable Code Assist Libraries**<br>False|
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>False|

@@ -5,8 +5,8 @@ annotate service.CompPlanPensiones with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Compañías Plan Pensiones',
+            TypeNamePlural: 'Compañías Plan Pensiones',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: seccion

@@ -5,8 +5,8 @@ annotate service.CatPensiones with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Catálogo de pensiones',
+            TypeNamePlural: 'Catálogo de pensiones',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: fechaEfectiva

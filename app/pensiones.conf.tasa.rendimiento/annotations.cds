@@ -5,8 +5,8 @@ annotate service.TasaRendimiento with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Tasa de rendimiento',
+            TypeNamePlural: 'Tasa de rendimiento',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: ejercicio

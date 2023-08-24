@@ -5,8 +5,8 @@ annotate service.AntiPorcAport with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Antigüedad/Porcentajes Aportación',
+            TypeNamePlural: 'Antigüedad/Porcentajes Aportación',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: antiguedad

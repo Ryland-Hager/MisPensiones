@@ -102,7 +102,8 @@
         "app/pensiones.conf.pe.carta.rec.kee.fil.aux2",
         "app/pensiones.conf.pe.carta.rec.kee.fil.aux3",
         "app/pensions.conf.pe.carta.rec.kee.aux2",
-        "app/pensiones.conf.pe.carta.rec.kee.aux3"
+        "app/pensiones.conf.pe.carta.rec.kee.aux3",
+        "app/pensions.conf.pe.carta.rec.kee.aux2"
     ],
     "devDependencies": {
         "@sap/ux-specification": "^1.108.12",

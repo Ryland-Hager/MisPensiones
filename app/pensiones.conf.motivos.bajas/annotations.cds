@@ -5,8 +5,8 @@ annotate service.MotivosBajas with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Motivo de bajas',
+            TypeNamePlural: 'Motivo de bajas',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: motivoGlobal

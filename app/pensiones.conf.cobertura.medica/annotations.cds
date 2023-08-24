@@ -5,8 +5,8 @@ annotate service.CoberturaMedica with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Cobertura medica',
+            TypeNamePlural: 'Cobertura medica',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: antiguedad

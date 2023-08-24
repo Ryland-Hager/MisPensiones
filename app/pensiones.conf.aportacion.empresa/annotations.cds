@@ -4,8 +4,8 @@ annotate service.AportacionEmpresa with @(
     UI : {
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Aportación Empresa, derechos adquiridos',
+            TypeNamePlural: 'Aportación Empresa, derechos adquiridos',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: anosServicio

@@ -5,8 +5,8 @@ annotate service.AsignPlanPensiones with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Asignación Plan de Pensiones',
+            TypeNamePlural: 'Asignación Plan de Pensiones',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: modulo

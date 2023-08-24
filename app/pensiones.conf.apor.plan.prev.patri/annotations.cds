@@ -5,8 +5,8 @@ annotate service.AporPlanPrevPatri with @(
 
         HeaderInfo     : {
             $Type         : 'UI.HeaderInfoType',
-            TypeName      : 'Aportacion',
-            TypeNamePlural: 'Aportacion',
+            TypeName      : 'Aportación plan de previsión patrimonial o plan TOP',
+            TypeNamePlural: 'Aportación plan de previsión patrimonial o plan TOP',
             Title         : {
                 $Type: 'UI.DataField',
                 Value: setID
