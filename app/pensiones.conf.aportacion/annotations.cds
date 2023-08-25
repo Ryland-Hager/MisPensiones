@@ -61,6 +61,26 @@ annotate service.Aportacion with @(
                 Label : '{i18n>porcentajeMax}',
                 Value : porcentajeMax,
             },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>createdAt}',
+                Value : createdAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>createdBy}',
+                Value : createdBy,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>modifiedAt}',
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>modifiedBy}',
+                Value : modifiedBy,
+            },
         ],
     },
     UI.Facets : [

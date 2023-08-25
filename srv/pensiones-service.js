@@ -33,17 +33,17 @@ class PensionesService extends cds.ApplicationService {
                 let RFC = filterString.split("'")[3];
                 let Maximum = await getMaximumPercentage(Empleados, Aportacion, ID, RFC);
 
+                //array of integers counting up to Maximum
                 var options = [];
-
                 for (let i = 1; i <= Maximum; i++) {
                     options.push(i); 
                 }
 
+                //array of percentage properties with values
                 percentages = options.map(percentage => ({
                     percentage: percentage
                 }))
             }
-
             return percentages;
         })
         

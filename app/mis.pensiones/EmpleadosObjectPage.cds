@@ -285,8 +285,6 @@ annotate service.Empleados with {
                 },
             ]
         },
-
-
     });
 }
 

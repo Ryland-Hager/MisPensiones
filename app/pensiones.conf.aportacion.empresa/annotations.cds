@@ -47,6 +47,26 @@ annotate service.AportacionEmpresa with @(
                 Label : '{i18n>adquisicionDerechos}',
                 Value : adquisicionDerechos,
             },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>createdAt}',
+                Value : createdAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>createdBy}',
+                Value : createdBy,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>modifiedAt}',
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : '{18n>modifiedBy}',
+                Value : modifiedBy,
+            },
         ],
     },
     UI.Facets : [
