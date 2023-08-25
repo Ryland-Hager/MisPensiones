@@ -20,6 +20,7 @@ async function getMaximumPercentage(Empleados, Aportacion, ID, RFC) {
 
     let porcentaje = await SELECT.from (Aportacion);
     
+    //Get Data
     let employeeData = await getEmployeeData(Empleados, ID, RFC);
     let sAntiguedad = employeeData[0].puntajeAntiguedad;
 
