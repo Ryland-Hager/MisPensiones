@@ -9,12 +9,6 @@ annotate service.Empleados with @(
                 ID : 'DetalleEmpleado',
                 Target : '@UI.FieldGroup#DetalleEmpleado'
             },
-            // {
-            //     $Type : 'UI.ReferenceFacet',
-            //     Label : '{i18n>Comentarios}',
-            //     ID : 'Comentarios',
-            //     Target : '@UI.FieldGroup#Comentarios'
-            // },
             {
                 $Type : 'UI.ReferenceFacet',
                 Label : '{i18n>DerechosAdquiridos}',
@@ -28,6 +22,7 @@ annotate service.Empleados with @(
                 Target : 'cuentas/@UI.LineItem'
             },
             {
+                //Collection Facet used to seperate section into three columns
                 $Type : 'UI.CollectionFacet',
                 Label : '{i18n>PorcentajeAportacion}',
                 ID : 'PorcentajeAportacion',
@@ -258,6 +253,9 @@ annotate service.Empleados with @(
     }
 );
 
+//Value List Help implementation for the "quieresAhorrar" field
+//Passes in the Employee ID and RFC as the filter and displays the percentage property
+//from the 'AllowedPercentages" entity
 annotate service.Empleados with {
     quieresAhorrar @(Common: {
         
@@ -399,8 +397,4 @@ annotate service.EstadoCuenta with @(
             }
         ]
     },
-
-    // Capabilities : {
-
-    // }
 );

@@ -397,18 +397,7 @@ entity CARTA_REC_KEE_FIL_AUX3 : managed {
     modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
 }
 
-entity MAPAELEMENTOS : managed{
-    key anosMesesDiasAntiguedad : String(15);
-    filterID : String;
-    filterRFC : String;
-    elementType : String(1);
-    comment : String(100);
-    createdAt   : Timestamp  @cds.on.insert: $now;
-    createdBy   : User       @cds.on.insert: $user;
-    modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
-    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
-}
-
+// Used in "Porcentaje De Aportacion" value help dropdown
 entity ALLOWEDPERCENTAGES {
     key percentage : Integer;
     empleadoID : String(8);

@@ -16,12 +16,14 @@ class PensionesService extends cds.ApplicationService {
 
         this.after('READ', 'Empleados', async (req) => {
 
+            //Pass array of all Empleado entities to fill the calculated fields and return new array
             const result = req;
             const employeeData = await fillEmployeeData(Empleados, Aportacion, result); 
 
             return employeeData;
         })
 
+        //Populate the allowed percentages in the Porcentaje de Aportacion section in the Object Page 
         this.on('READ', 'AllowedPercentages', async (req) => {
 
             let percentages = [];
@@ -48,6 +50,7 @@ class PensionesService extends cds.ApplicationService {
         })
         
 
+        //Functionality changed, delete?
         this.on('cambioPorcentaje', async (req) => {
             
             if (req.context.params) {
