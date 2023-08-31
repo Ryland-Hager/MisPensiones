@@ -278,9 +278,10 @@ annotate service.Empleados with {
                     LocalDataProperty : RFC
                 },
                 {
-                    $Type : 'Common.ValueListParameterDisplayOnly',
-                    ValueListProperty : 'percentage'
-                },
+                    $Type : 'Common.ValueListParameterInOut',
+                    ValueListProperty : 'percentage',
+                    LocalDataProperty: quieresAhorrar
+                }
             ]
         },
     });
@@ -398,3 +399,10 @@ annotate service.EstadoCuenta with @(
         ]
     },
 );
+
+annotate service.Empleados @(Common : {
+    SideEffects #employeeSavingProjection     : {
+        SourceProperties   : ['quieresAhorrar'],
+        TargetProperties : ['aportacionProyeccionEmpleado']
+    }
+});

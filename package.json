@@ -1,108 +1,109 @@
 {
-    "name": "MisPensiones",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
-        "@sap/cds": "^7",
-        "@sap/cds-hana": "^2",
-        "@sap/hana-client": "^2.17.22",
-        "@sap/xsenv": "^3.1.0",
-        "@sap/xssec": "^3.2.0",
-        "express": "^4",
-        "passport": "^0.4.1"
-    },
-    "scripts": {
-        "start": "cds-serve",
-        "watch-mis.pensiones": "cds watch --open mis.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
-        "undeploy": "cf undeploy MisPensiones --delete-services --delete-service-keys --delete-service-brokers",
-        "build": "rimraf resources mta_archives && mbt build --mtar archive",
-        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
-        "watch-pensiones.conf.aportacion": "cds watch --open pensiones.conf.aportacion/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.aportacion.empresa": "cds watch --open pensiones.conf.aportacion.empresa/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.cobertura.medica": "cds watch --open pensiones.conf.cobertura.medica/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.asign.plan": "cds watch --open pensiones.conf.asign.plan/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.comp.plan": "cds watch --open pensiones.conf.comp.plan/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.cat.pensiones": "cds watch --open pensiones.conf.cat.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.tasa.rendimiento": "cds watch --open pensiones.conf.tasa.rendimiento/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.anti.porc.aport": "cds watch --open pensiones.conf.anti.porc.aport/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.apor.plan.prev.patri": "cds watch --open pensiones.conf.apor.plan.prev.patri/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.cat.der.adquiridos": "cds watch --open pensiones.conf.cat.der.adquiridos/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.cat.ben.ret": "cds watch --open pensiones.conf.cat.ben.ret/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.motivos.bajas": "cds watch --open pensiones.conf.motivos.bajas/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.fid": "cds watch --open pensiones.conf.pe.carta.fid/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.fix.aux1": "cds watch --open pensiones.conf.pe.carta.fix.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.fid.aux2": "cds watch --open pensiones.conf.pe.carta.fid.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.fid.aux3": "cds watch --open pensiones.conf.pe.carta.fid.aux3/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee": "cds watch --open pensiones.conf.pe.carta.rec.kee/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.aux1": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.aux2": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.aux3": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux3/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.fil": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.kee.fil.aux1": "cds watch --open pensiones.conf.pe.kee.fil.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.fil.aux1": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.fil.aux2": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
-        "watch-pensiones.conf.pe.carta.rec.kee.fil.aux3": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil.aux3/webapp/index.html?sap-ui-xx-viewCache=false"
-    },
-    "cds": {
-        "build": {
-            "tasks": [
-                {
-                    "for": "hana",
-                    "dest": "../db"
-                },
-                {
-                    "for": "node-cf"
-                }
-            ]
+  "name": "MisPensiones",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
+    "@sap/hana-client": "^2.17.22",
+    "@sap/xsenv": "^3.1.0",
+    "@sap/xssec": "^3.2.0",
+    "express": "^4",
+    "passport": "^0.4.1"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-mis.pensiones": "cds watch --open mis.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
+    "undeploy": "cf undeploy MisPensiones --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-pensiones.conf.aportacion": "cds watch --open pensiones.conf.aportacion/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.aportacion.empresa": "cds watch --open pensiones.conf.aportacion.empresa/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.cobertura.medica": "cds watch --open pensiones.conf.cobertura.medica/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.asign.plan": "cds watch --open pensiones.conf.asign.plan/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.comp.plan": "cds watch --open pensiones.conf.comp.plan/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.cat.pensiones": "cds watch --open pensiones.conf.cat.pensiones/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.tasa.rendimiento": "cds watch --open pensiones.conf.tasa.rendimiento/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.anti.porc.aport": "cds watch --open pensiones.conf.anti.porc.aport/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.apor.plan.prev.patri": "cds watch --open pensiones.conf.apor.plan.prev.patri/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.cat.der.adquiridos": "cds watch --open pensiones.conf.cat.der.adquiridos/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.cat.ben.ret": "cds watch --open pensiones.conf.cat.ben.ret/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.motivos.bajas": "cds watch --open pensiones.conf.motivos.bajas/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.fid": "cds watch --open pensiones.conf.pe.carta.fid/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.fix.aux1": "cds watch --open pensiones.conf.pe.carta.fix.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.fid.aux2": "cds watch --open pensiones.conf.pe.carta.fid.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.fid.aux3": "cds watch --open pensiones.conf.pe.carta.fid.aux3/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee": "cds watch --open pensiones.conf.pe.carta.rec.kee/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.aux1": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.aux2": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.aux3": "cds watch --open pensiones.conf.pe.carta.rec.kee.aux3/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.fil": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.kee.fil.aux1": "cds watch --open pensiones.conf.pe.kee.fil.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.fil.aux1": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil.aux1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.fil.aux2": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil.aux2/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-pensiones.conf.pe.carta.rec.kee.fil.aux3": "cds watch --open pensiones.conf.pe.carta.rec.kee.fil.aux3/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "build": {
+      "tasks": [
+        {
+          "for": "hana",
+          "dest": "../db"
         },
-        "hana": {
-            "deploy-format": "hdbtable"
-        },
-        "requires": {
-            "db": {
-                "kind": "hana"
-            },
-            "uaa": {
-                "kind": "xsuaa"
-            }
-        },
-        "fiori": {
-            "lean_draft": false
+        {
+          "for": "node-cf"
         }
+      ]
     },
-    "sapux": [
-        "app/mis.pensiones",
-        "app/pensiones.conf.aportacion",
-        "app/pensiones.conf.aportacion.empresa",
-        "app/pensiones.conf.cobertura.medica",
-        "app/pensiones.conf.asign.plan",
-        "app/pensiones.conf.comp.plan",
-        "app/pensiones.conf.cat.pensiones",
-        "app/pensiones.conf.tasa.rendimiento",
-        "app/pensiones.conf.anti.porc.aport",
-        "app/pensiones.conf.apor.plan.prev.patri",
-        "app/pensiones.conf.cat.der.adquiridos",
-        "app/pensiones.conf.cat.ben.ret",
-        "app/pensiones.conf.motivos.bajas",
-        "app/pensiones.conf.pe.carta.fid",
-        "app/pensiones.conf.pe.carta.fix.aux1",
-        "app/pensiones.conf.pe.carta.fid.aux2",
-        "app/pensiones.conf.pe.carta.fid.aux3",
-        "app/pensiones.conf.pe.carta.rec.kee",
-        "app/pensiones.conf.pe.carta.rec.kee.aux1",
-        "app/pensiones.conf.pe.carta.rec.kee.aux2",
-        "app/pensiones.conf.pe.carta.rec.kee.aux3",
-        "app/pensiones.conf.pe.carta.rec.kee.fil",
-        "app/pensiones.conf.pe.kee.fil.aux1",
-        "app/pensiones.conf.pe.carta.rec.kee.fil.aux1",
-        "app/pensiones.conf.pe.carta.rec.kee.fil.aux2",
-        "app/pensiones.conf.pe.carta.rec.kee.fil.aux3"
-    ],
-    "devDependencies": {
-        "@sap/ux-specification": "^1.108.12",
-        "rimraf": "^3.0.2"
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "db": {
+        "kind": "hana"
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    },
+    "fiori": {
+      "lean_draft": false
     }
+  },
+  "sapux": [
+    "app/mis.pensiones",
+    "app/pensiones.conf.aportacion",
+    "app/pensiones.conf.aportacion.empresa",
+    "app/pensiones.conf.cobertura.medica",
+    "app/pensiones.conf.asign.plan",
+    "app/pensiones.conf.comp.plan",
+    "app/pensiones.conf.cat.pensiones",
+    "app/pensiones.conf.tasa.rendimiento",
+    "app/pensiones.conf.anti.porc.aport",
+    "app/pensiones.conf.apor.plan.prev.patri",
+    "app/pensiones.conf.cat.der.adquiridos",
+    "app/pensiones.conf.cat.ben.ret",
+    "app/pensiones.conf.motivos.bajas",
+    "app/pensiones.conf.pe.carta.fid",
+    "app/pensiones.conf.pe.carta.fix.aux1",
+    "app/pensiones.conf.pe.carta.fid.aux2",
+    "app/pensiones.conf.pe.carta.fid.aux3",
+    "app/pensiones.conf.pe.carta.rec.kee",
+    "app/pensiones.conf.pe.carta.rec.kee.aux1",
+    "app/pensiones.conf.pe.carta.rec.kee.aux2",
+    "app/pensiones.conf.pe.carta.rec.kee.aux3",
+    "app/pensiones.conf.pe.carta.rec.kee.fil",
+    "app/pensiones.conf.pe.kee.fil.aux1",
+    "app/pensiones.conf.pe.carta.rec.kee.fil.aux1",
+    "app/pensiones.conf.pe.carta.rec.kee.fil.aux2",
+    "app/pensiones.conf.pe.carta.rec.kee.fil.aux3"
+  ],
+  "devDependencies": {
+    "@sap/hdi-deploy": "4.8.0",
+    "@sap/ux-specification": "^1.108.12",
+    "rimraf": "^3.0.2"
+  }
 }

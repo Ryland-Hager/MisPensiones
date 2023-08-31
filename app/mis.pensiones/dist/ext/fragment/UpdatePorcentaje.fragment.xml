@@ -1,0 +1,39 @@
+<core:FragmentDefinition id="idupdatePorcentaje" xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Dialog id="_IDDialog1"
+        title='{i18n>UpdatePorcentaje}'
+        class="sapUiResponsiveContentPadding"
+        beforeOpen=".onBeforeOpenPorcentaje"
+        afterClose=".onAfterClosePorcentaje">
+        <content>
+<f:SimpleForm id="_IDGenSimpleForm1" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false"
+									emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+            <Text id="EmpleadoNameText" text="Empleado: {empleado>/primerNombre} {empleado>/apellidoPaterno} {empleado>/apellidoMaterno}"/>
+            <Text id="MaxAportacionText" text="% Max de Aportacion: {empleado>/maxAportacion}%"/>
+            <Label id="_IDGenLabel2" text= "Porcentaje"/>
+            <Input 
+                id="idAportacion"
+                type="Text"
+                class="sapUiSmallMarginBottom"
+                placeholder="Entre"
+                maxLength="10"
+                valueStateText="Field must not be empty"    
+                liveChange=".onPorcentajeChange" />
+</f:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="ok"
+                text="OK"
+                press=".onOkPorcentaje"
+                type="Emphasized"
+                enabled="false" />
+        </beginButton>
+        <endButton>
+            <Button id="cancel"
+                text="Cancel"
+                press=".onCancelPorcentaje" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

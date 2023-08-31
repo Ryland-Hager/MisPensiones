@@ -51,7 +51,6 @@ entity EMPLEADOS {
     aportacionActualEmpresa         : Decimal(15,2)    @readonly    @Common.Label:'{i18n>aportacionActualEmpresa}';
     aportacionProyeccionEmpresa     : Decimal(15, 2)   @readonly    @Common.Label:'{i18n>aportacionProyeccionEmpresa}';
     cuentas                         : Association to many ESTADO_CUENTA on cuentas.empleadoID = $self.ID;
-    allowedPercentages              : Association to many ALLOWEDPERCENTAGES on allowedPercentages.empleadoID = $self.ID;
 }
 
 entity ESTADO_CUENTA {
@@ -398,6 +397,7 @@ entity CARTA_REC_KEE_FIL_AUX3 : managed {
 }
 
 // Used in "Porcentaje De Aportacion" value help dropdown
+@cds.persistence.skip
 entity ALLOWEDPERCENTAGES {
     key percentage : Integer;
     empleadoID : String(8);

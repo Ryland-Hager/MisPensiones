@@ -1,11 +1,9 @@
-const { requestUserToken } = require("@sap/xssec/lib/requests");
-
 //Used to retreive the full Empleado entity so you have access to every field in the database
 async function getEmployeeData(Empleados, ID, RFC) {
     let query = SELECT.from(Empleados);
 
     if (ID && RFC) {
-        query = query.where({ ID: ID, RFC: RFC});
+        query = query.where({ ID: ID, RFC: RFC });
     }
 
     try {
@@ -21,18 +19,17 @@ async function getEmployeeData(Empleados, ID, RFC) {
 async function getMaximumPercentage(Empleados, Aportacion, ID, RFC) {
 
     //Retreive each row of Aportacion table and store in porcentaje array
-    let porcentaje = await SELECT.from (Aportacion);
-    
+    let porcentaje = await SELECT.from(Aportacion);
+
     //Get specific employee entity data and store seniority score in sAntiguedad
     let employeeData = await getEmployeeData(Empleados, ID, RFC);
     let sAntiguedad = employeeData[0].puntajeAntiguedad;
 
     //Iterate through each row of Aportacion table
     //If the seniority score matches the criteria in the row, return the maximum percentage
-    for(var i = 0; i < porcentaje.length; i++) {
-            
-        if((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad))
-        {
+    for (var i = 0; i < porcentaje.length; i++) {
+
+        if ((porcentaje[i].antiguedadInicial <= sAntiguedad) && (porcentaje[i].antiguedadFinal >= sAntiguedad)) {
             return porcentaje[i].porcentajeMax;
         }
     }
@@ -51,8 +48,10 @@ async function fillEmployeeData(Empleados, Aportacion, result) {
         //Assign values
         result[i].aportacionMaxima = Maximum;
         result[i].aportacionActualEmpleado = Math.round((employeeData[0].sueldoMensual * (Maximum * .01)));
-        result[i].aportacionProyeccionEmpleado = Math.round((employeeData[0].sueldoMensual * result[i].aportacionVigente));
-
+        if (result[i].aportacionProyeccionEmpleado === undefined) {
+            result[i].aportacionProyeccionEmpleado = Math.round((employeeData[0].sueldoMensual * result[i].aportacionVigente));
+        }
+        
         //Dummy values assigned here
         result[i].aportacionActualEmpresa = 26543.23;
         result[i].aportacionProyeccionEmpresa = 32859.19;
@@ -61,8 +60,21 @@ async function fillEmployeeData(Empleados, Aportacion, result) {
     return result;
 }
 
+async function updateEmployeeSavingsProjection(EmpleadosEntity, employeeData, savingPercentage) {
+    let { sueldoMensual, ID, RFC } = employeeData[0]
+    let savingProjections = (parseFloat(sueldoMensual) * savingPercentage) / 100
+    savingProjections = savingProjections.toFixed(2)
+
+    await cds.update(EmpleadosEntity.drafts)
+        .where({ ID: ID, RFC: RFC })
+        .set({
+            aportacionProyeccionEmpleado: savingProjections
+        });
+}
+
 module.exports = {
     getEmployeeData,
     fillEmployeeData,
-    getMaximumPercentage
+    getMaximumPercentage,
+    updateEmployeeSavingsProjection
 };

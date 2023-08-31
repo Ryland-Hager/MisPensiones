@@ -29,23 +29,18 @@ sap.ui.define([
 			onInit: function () {
 				this._resourceBundle = this.base.getAppComponent().getModel("i18n").getResourceBundle();
 
-				// this.getView().setModel(new JSONModel({
-                //     // Status: aStatus,
-                //     // Reason: aReason,
-                //     ReasonRequired: false
-                // }), "StatusUpdate");
-                // this._resourceBundle = this.base.getAppComponent().getModel("i18n").getResourceBundle();
-                var oModel = new JSONModel({ 
-                    ID: "",
-                    primerNombre: "",
-                    apellidoPaterno: "",
-                    apellidoMaterno: "",
-                    maxAportacion: ""
-                });
-                this.getView().setModel(oModel, "empleado");
+                // var oModel = new JSONModel({ 
+                //     ID: "",
+                //     primerNombre: "",
+                //     apellidoPaterno: "",
+                //     apellidoMaterno: "",
+                //     maxAportacion: ""
+                // });
+                // this.getView().setModel(oModel, "empleado");
 			}
 		},
 
+        //Funcionality changed, potentially delete?
 		onCambioPorcentaje: function (oContext, aSelectedContexts) {
 			this.getView().getModel("empleado");
             var that = this;
@@ -83,7 +78,7 @@ sap.ui.define([
 			if (!this.pDialog) {
                 this.pDialog = Fragment.load({
                     id: "idupdatePorcentaje",
-                    name: "mis.pensiones.ext.fragments.UpdatePorcentaje",
+                    name: "mis.pensiones.ext.fragment.UpdatePorcentaje",
                     controller: this,
                 })
             }
@@ -94,13 +89,15 @@ sap.ui.define([
             });
 		},
 
+        // Carga Manual Implementation
+        // Calls Upload File Fragment
         onCargaManual: function (oContext) {
             var that = this;
 
             if (!this.pDialog) {
                 this.pDialog = Fragment.load({
                     id: "idUploadFile",
-                    name: "mis.pensiones.ext.fragments.UploadFile",
+                    name: "mis.pensiones.ext.fragment.UploadFile",
                     controller: this
                 })
             }
@@ -109,44 +106,10 @@ sap.ui.define([
             })
         },
 
-		onOkPorcentaje: function (oEvent) {
-            this.setDialogBusy(true);
-            var that = this;
-            // let sStatusCB = this.byId("idupdateStatus", "idCBStatus").getSelectedKey();
-            let sAportacion = this.byId("idupdatePorcentaje", "idAportacion").getValue();
-
-            var cambioPorcentaje = function () {
-                this.base.editFlow
-                    .invokeAction("PensionesService.cambioPorcentaje", {
-                        contexts: this.aSelectedContexts,
-                        parameterValues: [{ name: "aportacionFutura", value: sAportacion }],
-                        // { name: "motivo_de_rechazo", value: sReasonCB }],
-                        skipParameterDialog: true
-                    }
-
-                    )
-                    .then(function (results) {
-                        that.setDialogBusy(false);
-                        that.closeDialog();
-                        that.base.getExtensionAPI().refresh();
-                    });
-            }.bind(this);
-            cambioPorcentaje();
-
-        },
-		onBeforeOpen: function (oEvent) {
+        // Carga Manual Helper Functions 
+        onBeforeOpen: function (oEvent) {
             this.oUploadDialog = oEvent.getSource();
             this.base.getExtensionAPI().addDependent(this.oUploadDialog);
-        },
-        onBeforeOpenPorcentaje: function (oEvent) {
-            this.oPorcentajeDialog = oEvent.getSource();
-            this.base.getExtensionAPI().addDependent(this.oPorcentajeDialog);
-        },
-		onAfterClosePorcentaje: function (oEvent) {
-            this.base.getExtensionAPI().removeDependent(this.oPorcentajeDialog);
-            this.oPorcentajeDialog.destroy();
-            this.oPorcentajeDialog = null;
-            this.pDialog = undefined;
         },
         onAfterClose: function (oEvent) {
             this.base.getExtensionAPI().removeDependent(this.oUploadDialog);
@@ -154,7 +117,7 @@ sap.ui.define([
             this.oUploadDialog = null;
             this.pDialog = undefined;
         },
-		setDialogBusy: function (bBusy) {
+        setDialogBusy: function (bBusy) {
             this.oUploadDialog && this.oUploadDialog.setBusy(bBusy);
             this.oPorcentajeDialog && this.oPorcentajeDialog.setBusy(bBusy);
             // this.oStatusDialogLiq && this.oStatusDialogLiq.setBusy(bBusy);
@@ -175,14 +138,6 @@ sap.ui.define([
         },
         validateInput: function (oInput) {
             var oBinding = oInput.getBinding("aportacion")
-        },
-        onPorcentajeChange: function (oEvent) {
-            
-            // var oInput = oEvent.getSource();
-            // this.validateInput(oInput);
-
-            
-            this.setOkButtonEnabled(true);
         },
         setOkButtonEnabled: function (bOk) {
             this.oUploadDialog && this.oUploadDialog.getBeginButton().setEnabled(bOk);
@@ -281,6 +236,54 @@ sap.ui.define([
             oConfig.property = elem
             return oConfig;
           })
+        },
+
+
+
+
+        //Cambio Porcentaje Helper Functions
+        //Potentially delete?
+		onOkPorcentaje: function (oEvent) {
+            this.setDialogBusy(true);
+            var that = this;
+            // let sStatusCB = this.byId("idupdateStatus", "idCBStatus").getSelectedKey();
+            let sAportacion = this.byId("idupdatePorcentaje", "idAportacion").getValue();
+
+            var cambioPorcentaje = function () {
+                this.base.editFlow
+                    .invokeAction("PensionesService.cambioPorcentaje", {
+                        contexts: this.aSelectedContexts,
+                        parameterValues: [{ name: "aportacionFutura", value: sAportacion }],
+                        // { name: "motivo_de_rechazo", value: sReasonCB }],
+                        skipParameterDialog: true
+                    }
+
+                    )
+                    .then(function (results) {
+                        that.setDialogBusy(false);
+                        that.closeDialog();
+                        that.base.getExtensionAPI().refresh();
+                    });
+            }.bind(this);
+            cambioPorcentaje();
+
+        },
+        onBeforeOpenPorcentaje: function (oEvent) {
+            this.oPorcentajeDialog = oEvent.getSource();
+            this.base.getExtensionAPI().addDependent(this.oPorcentajeDialog);
+        },
+		onAfterClosePorcentaje: function (oEvent) {
+            this.base.getExtensionAPI().removeDependent(this.oPorcentajeDialog);
+            this.oPorcentajeDialog.destroy();
+            this.oPorcentajeDialog = null;
+            this.pDialog = undefined;
+        },
+        onPorcentajeChange: function (oEvent) {
+            
+            // var oInput = oEvent.getSource();
+            // this.validateInput(oInput);
+                     
+            this.setOkButtonEnabled(true);
         }
 		
 	});

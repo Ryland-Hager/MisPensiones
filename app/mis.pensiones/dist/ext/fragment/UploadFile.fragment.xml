@@ -1,0 +1,36 @@
+<core:FragmentDefinition id="idUploadFile" xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m">
+    <Dialog id="_IDDialog"
+        title='{i18n>excel_Upload}'
+        class="sapUiResponsiveContentPadding"
+        beforeOpen=".onBeforeOpen"
+        afterClose=".onAfterClose">
+        <content>
+            <u:FileUploader id="uploader"
+                fileType="txt"
+                multiple="false"
+                uploadUrl='./pensiones/cargaDeExcel/excel'
+                fileAllowed=".onFileAllowed"
+                fileEmpty=".onFileEmpty"
+                uploadComplete=".onUploadComplete"
+                typeMissmatch=".onTypeMismatch"
+                sendXHR="true"
+                useMultipart="false"
+                placeholder="{i18n>placeHolder}"
+                httpRequestMethod="Put" />
+        </content>
+        <beginButton>
+            <Button id="ok"
+                text="{i18n>continue}"
+                press=".onOk"
+                type="Emphasized"
+                enabled="false" />
+        </beginButton>
+        <endButton>
+            <Button id="Cancel"
+                text="{i18n>cancel}"
+                press=".onCancel" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
