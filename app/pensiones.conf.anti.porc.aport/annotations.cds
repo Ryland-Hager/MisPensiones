@@ -18,13 +18,13 @@ annotate service.AntiPorcAport with @(UI: {
     LineItem       : [
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>antiguedad}',
-            Value: antiguedad,
+            Label: '{i18n>fechaEfectiva}',
+            Value: fechaEfectiva,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>fechaEfectiva}',
-            Value: fechaEfectiva,
+            Label: '{i18n>antiguedad}',
+            Value: antiguedad,
         },
         {
             $Type: 'UI.DataField',
@@ -41,6 +41,25 @@ annotate service.AntiPorcAport with @(UI: {
             Label: '{i18n>aportacionFijaEmpresa}',
             Value: aportacionFijaEmpresa,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
     ],
     SelectionFields: [
         antiguedad,
@@ -54,13 +73,13 @@ annotate service.AntiPorcAport with @(
         Data : [
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>antiguedad}',
-                Value: antiguedad,
+                Label: '{i18n>fechaEfectiva}',
+                Value: fechaEfectiva,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>fechaEfectiva}',
-                Value: fechaEfectiva,
+                Label: '{i18n>antiguedad}',
+                Value: antiguedad,
             },
             {
                 $Type: 'UI.DataField',
@@ -79,22 +98,12 @@ annotate service.AntiPorcAport with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
+                Label: 'Fecha modificación',
                 Value: modifiedAt,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
+                Label: 'Usuario',
                 Value: modifiedBy,
             },
         ],

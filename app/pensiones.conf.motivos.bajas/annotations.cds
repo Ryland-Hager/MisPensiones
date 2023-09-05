@@ -18,18 +18,37 @@ annotate service.MotivosBajas with @(UI: {
     LineItem       : [
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>locales}',
-            Value: locales,
-        },
-        {
-            $Type: 'UI.DataField',
             Label: '{i18n>motivoGlobal}',
             Value: motivoGlobal,
         },
         {
             $Type: 'UI.DataField',
+            Label: '{i18n>locales}',
+            Value: locales,
+        },
+        {
+            $Type: 'UI.DataField',
             Label: '{i18n>porcentaje}',
             Value: porcentaje,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
         },
     ],
     SelectionFields: [
@@ -45,13 +64,13 @@ annotate service.MotivosBajas with @(
         Data : [
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>locales}',
-                Value: locales,
+                Label: '{i18n>motivoGlobal}',
+                Value: motivoGlobal,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>motivoGlobal}',
-                Value: motivoGlobal,
+                Label: '{i18n>locales}',
+                Value: locales,
             },
             {
                 $Type: 'UI.DataField',
@@ -60,22 +79,12 @@ annotate service.MotivosBajas with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
+                Label: 'Fecha modificación',
                 Value: modifiedAt,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
+                Label: 'Usuario',
                 Value: modifiedBy,
             },
         ],

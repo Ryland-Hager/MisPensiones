@@ -27,10 +27,20 @@ annotate service.CoberturaMedica with @(
             Label : '{i18n>aportacionPesos}',
             Value : aportacionPesos,
         },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+            },
         ],
         SelectionFields: [
             antiguedad,
-            aportacionPesos
+            aportacionPesos,
+            modifiedAt,
+            modifiedBy
         ],
     }
 );
@@ -50,22 +60,10 @@ annotate service.CoberturaMedica with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{18n>createdAt}',
-                Value : createdAt,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>createdBy}',
-                Value : createdBy,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>modifiedAt}',
                 Value : modifiedAt,
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{18n>modifiedBy}',
                 Value : modifiedBy,
             },
         ],
@@ -79,3 +77,9 @@ annotate service.CoberturaMedica with @(
         },
     ]
 );
+annotate service.CoberturaMedica with {
+    modifiedAt @Common.Label : 'Fecha modificación'
+};
+annotate service.CoberturaMedica with {
+    modifiedBy @Common.Label : 'Usuario'
+};

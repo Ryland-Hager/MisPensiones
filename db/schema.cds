@@ -84,9 +84,9 @@ entity APORTACION : managed {
     key antiguedadFinal : Decimal(10, 2)   @Common.Label:'{i18n>antiguedadFinal}';
     porcentajeMax : Integer                @Common.Label:'{i18n>porcentajeMax}';
     createdAt   : Timestamp  @cds.on.insert: $now;
-    createdBy   : User       @cds.on.insert: $user;
+    createdBy   : User       @cds.on.insert: $use;
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
-    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user @Common.Label:'Modificado Por';
 }
 
 entity APORTACION_EMPRESA : managed {
@@ -130,9 +130,9 @@ entity ASIGN_PLAN_PENSIONES : managed {
     parametro9 : String(15)                @Common.Label:'{i18n>parametro9}';
     parametro10 : String(15)               @Common.Label:'{i18n>parametro10}';
     createdAt   : Timestamp  @cds.on.insert: $now;
-    createdBy   : User       @cds.on.insert: $user;
+    createdBy   : User       @cds.on.insert: $user @Common.Label:'creadoPor';
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
-    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user @Common.Label:'modificadoPor';
 }
 
 entity COMP_PLAN_PENSIONES : managed {
@@ -140,9 +140,9 @@ entity COMP_PLAN_PENSIONES : managed {
     key seccion : String(15)       @Common.Label:'{i18n>seccion}';
     parametro1 : String(15)        @Common.Label:'{i18n>parametro1}';
     createdAt   : Timestamp  @cds.on.insert: $now;
-    createdBy   : User       @cds.on.insert: $user;
+    createdBy   : User       @cds.on.insert: $user @Common.Label:'creadoPor';
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
-    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user @Common.Label:'modificadoPor';
 }
 
 entity CAT_PENSIONES : managed {
@@ -156,9 +156,9 @@ entity CAT_PENSIONES : managed {
     rentaFija : Decimal(15, 2)             @Common.Label:'{i18n>rentaFija}';
     rentaVariable : Decimal(15, 2)         @Common.Label:'{i18n>rentaVariable}';
     createdAt   : Timestamp  @cds.on.insert: $now;
-    createdBy   : User       @cds.on.insert: $user;
+    createdBy   : User       @cds.on.insert: $user @Common.Label:'creadoPor';
     modifiedAt  : Timestamp  @cds.on.insert: $now   @cds.on.update: $now;
-    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user;
+    modifiedBy  : User       @cds.on.insert: $user  @cds.on.update: $user @Common.Label:'modificadoPor';
 }
 
 entity TASA_RENDIMIENTO : managed {

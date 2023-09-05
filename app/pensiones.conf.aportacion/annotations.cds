@@ -31,6 +31,25 @@ annotate service.Aportacion with @(
             Label : '{i18n>porcentajeMax}',
             Value : porcentajeMax,
         },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+                Label : 'Fecha modificación',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+                Label : 'Usuario',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdAt,
+                Label : 'createdAt',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : createdBy,
+            },
         ],
         SelectionFields: [
             antiguedadInicial,
@@ -63,23 +82,13 @@ annotate service.Aportacion with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{18n>createdAt}',
-                Value : createdAt,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>createdBy}',
-                Value : createdBy,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>modifiedAt}',
                 Value : modifiedAt,
+                Label : 'Fecha modificación',
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{18n>modifiedBy}',
                 Value : modifiedBy,
+                Label : 'Usuario',
             },
         ],
     },

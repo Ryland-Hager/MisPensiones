@@ -18,18 +18,37 @@ annotate service.CompPlanPensiones with @(UI: {
     LineItem       : [
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>seccion}',
-            Value: seccion,
-        },
-        {
-            $Type: 'UI.DataField',
             Label: '{i18n>orden}',
             Value: orden,
         },
         {
             $Type: 'UI.DataField',
+            Label: '{i18n>seccion}',
+            Value: seccion,
+        },
+        {
+            $Type: 'UI.DataField',
             Label: '{i18n>parametro1}',
             Value: parametro1,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
         },
     ],
     SelectionFields: [
@@ -58,24 +77,23 @@ annotate service.CompPlanPensiones with @(
                 Value: parametro1,
             },
             {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+                Label : 'Fecha modificación',
             },
             {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+                Label : 'Usuario',
             },
             {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
-                Value: modifiedAt,
+                $Type : 'UI.DataField',
+                Value : createdAt,
+                Label : 'createdAt',
             },
             {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
-                Value: modifiedBy,
+                $Type : 'UI.DataField',
+                Value : createdBy,
             },
         ],
     },

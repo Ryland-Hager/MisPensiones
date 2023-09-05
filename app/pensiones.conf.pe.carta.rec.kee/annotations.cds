@@ -33,7 +33,7 @@ annotate service.CartaRecKee with @(UI: {
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>fecha}',
+            Label: 'Fecha',
             Value: fecha,
         },
         {
@@ -91,6 +91,25 @@ annotate service.CartaRecKee with @(UI: {
             Label: '{i18n>puesto}',
             Value: puesto,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
     ],
 });
 
@@ -115,7 +134,7 @@ annotate service.CartaRecKee with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>fecha}',
+                Label: 'Fecha',
                 Value: fecha,
             },
             {
@@ -175,22 +194,12 @@ annotate service.CartaRecKee with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
+                Label: 'Fecha modificación',
                 Value: modifiedAt,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
+                Label: 'Usuario',
                 Value: modifiedBy,
             },
         ],

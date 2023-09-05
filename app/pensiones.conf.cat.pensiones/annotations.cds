@@ -18,13 +18,13 @@ annotate service.CatPensiones with @(UI: {
     LineItem       : [
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>estado}',
-            Value: estado,
+            Label: '{i18n>fechaEfectiva}',
+            Value: fechaEfectiva,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>fechaEfectiva}',
-            Value: fechaEfectiva,
+            Label: '{i18n>estado}',
+            Value: estado,
         },
         {
             $Type: 'UI.DataField',
@@ -61,6 +61,25 @@ annotate service.CatPensiones with @(UI: {
             Label: '{i18n>rentaVariable}',
             Value: rentaVariable,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
     ],
     SelectionFields: [
         estado,
@@ -75,13 +94,13 @@ annotate service.CatPensiones with @(
         Data : [
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>estado}',
-                Value: estado,
+                Label: '{i18n>fechaEfectiva}',
+                Value: fechaEfectiva,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>fechaEfectiva}',
-                Value: fechaEfectiva,
+                Label: '{i18n>estado}',
+                Value: estado,
             },
             {
                 $Type: 'UI.DataField',
@@ -119,24 +138,14 @@ annotate service.CatPensiones with @(
                 Value: rentaVariable,
             },
             {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
+                $Type : 'UI.DataField',
+                Value : modifiedAt,
+                Label : 'Fecha modificación',
             },
             {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
-                Value: modifiedAt,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
-                Value: modifiedBy,
+                $Type : 'UI.DataField',
+                Value : modifiedBy,
+                Label : 'Usuario',
             },
         ],
     },

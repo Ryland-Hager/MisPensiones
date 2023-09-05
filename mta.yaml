@@ -171,6 +171,10 @@ modules:
       - pensionesconfpecartareckeefilaux3.zip
       name: pensionesconfpecartareckeefilaux3
       target-path: resources/
+    - artifacts:
+      - cartafiduciario.zip
+      name: cartafiduciario
+      target-path: resources/
 - name: mispensiones
   type: html5
   path: app/mis.pensiones
@@ -414,6 +418,16 @@ modules:
 - name: pensionesconfpecartareckeefilaux3
   type: html5
   path: app/pensiones.conf.pe.carta.rec.kee.fil.aux3
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: cartafiduciario
+  type: html5
+  path: app/cartafiduciario
   build-parameters:
     build-result: dist
     builder: custom

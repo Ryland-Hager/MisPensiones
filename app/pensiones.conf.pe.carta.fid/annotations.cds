@@ -32,7 +32,7 @@ annotate service.CartaFid with @(UI: {
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>fecha}',
+            Label: 'Fecha',
             Value: fecha,
         },
         {
@@ -90,6 +90,25 @@ annotate service.CartaFid with @(UI: {
             Label: '{i18n>puesto}',
             Value: puesto,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
     ],
 }
 
@@ -117,7 +136,7 @@ annotate service.CartaFid with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>fecha}',
+                Label: 'Fecha',
                 Value: fecha,
             },
             {
@@ -177,22 +196,12 @@ annotate service.CartaFid with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
+                Label: 'Fecha modificación',
                 Value: modifiedAt,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
+                Label: 'Usuario',
                 Value: modifiedBy,
             },
         ],
@@ -203,4 +212,32 @@ annotate service.CartaFid with @(
         Label : 'General Information',
         Target: '@UI.FieldGroup#GeneratedGroup1',
     }, ]
+);
+annotate service.CartaFid with @(
+    UI.FieldGroup #CartaFiduciarioDestinatarios : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+        ],
+    }
+);
+annotate service.CartaFid with @(
+    UI.FieldGroup #Destinatarios : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+        ],
+    }
+);
+annotate service.CartaFid with @(
+    UI.FieldGroup #Ejecutivosdecuenta : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+        ],
+    }
+);
+annotate service.CartaFid with @(
+    UI.FieldGroup #AportacionesEmpleados : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+        ],
+    }
 );

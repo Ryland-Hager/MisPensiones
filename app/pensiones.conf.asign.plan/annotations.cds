@@ -18,108 +18,127 @@ annotate service.AsignPlanPensiones with @(UI: {
     LineItem       : [
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>procesoID}',
-            Value: procesoID,
-        },
-        {
-            $Type: 'UI.DataField',
-            Label: '{i18n>modulo}',
+            Label: 'Módulo',
             Value: modulo,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>descripcion}',
+            Label: 'ID Proceso',
+            Value: procesoID,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Descripción',
             Value: descripcion,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>orden}',
+            Label: 'Orden',
             Value: orden,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>secciones}',
+            Label: 'Secciones',
             Value: secciones,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>tipoElemento}',
+            Label: 'Tipo de Elemento',
             Value: tipoElemento,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>elemento}',
+            Label: 'Elemento',
             Value: elemento,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>setID}',
+            Label: 'ID set',
             Value: setID,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>cuenta}',
+            Label: 'Cuenta',
             Value: cuenta,
         },
         {
-            $Type: 'UI.DataField',
-            Label: '{i18n>descripcion}',
-            Value: descripcion,
+            $Type : 'UI.DataField',
+            Label: 'Descripción',
+            Value : descripcion2,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>valorLargo}',
+            Label: 'Valor Largo',
             Value: valorLargo,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro1}',
+            Label: 'Páramentro 1',
             Value: parametro1,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro2}',
+            Label: 'Páramentro 2',
             Value: parametro2,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro3}',
+            Label: 'Páramentro 3',
             Value: parametro3,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro4}',
+            Label: 'Páramentro 4',
             Value: parametro4,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro5}',
+            Label: 'Páramentro 5',
             Value: parametro5,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro6}',
+            Label: 'Páramentro 6',
             Value: parametro6,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro7}',
+            Label: 'Páramentro 7',
             Value: parametro7,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro8}',
+            Label: 'Páramentro 8',
             Value: parametro8,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro9}',
+            Label: 'Páramentro 9',
             Value: parametro9,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>parametro10}',
+            Label: 'Páramentro 10',
             Value: parametro10,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
         }
     ],
     SelectionFields: [
@@ -132,131 +151,121 @@ annotate service.AsignPlanPensiones with @(
     UI.FieldGroup #GeneratedGroup1: {
         $Type: 'UI.FieldGroupType',
         Data : [
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>procesoID}',
-                Value: procesoID,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>modulo}',
-                Value: modulo,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>descripcion}',
-                Value: descripcion,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>orden}',
-                Value: orden,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>secciones}',
-                Value: secciones,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>tipoElemento}',
-                Value: tipoElemento,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>elemento}',
-                Value: elemento,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>setID}',
-                Value: setID,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>cuenta}',
-                Value: cuenta,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>descripcion}',
-                Value: descripcion,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>valorLargo}',
-                Value: valorLargo,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro1}',
-                Value: parametro1,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro2}',
-                Value: parametro2,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro3}',
-                Value: parametro3,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro4}',
-                Value: parametro4,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro5}',
-                Value: parametro5,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro6}',
-                Value: parametro6,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro7}',
-                Value: parametro7,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro8}',
-                Value: parametro8,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro9}',
-                Value: parametro9,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{i18n>parametro10}',
-                Value: parametro10,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>createdAt}',
-                Value : createdAt,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>createdBy}',
-                Value : createdBy,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>modifiedAt}',
-                Value : modifiedAt,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : '{18n>modifiedBy}',
-                Value : modifiedBy,
-            },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Módulo',
+            Value: modulo,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'ID Proceso',
+            Value: procesoID,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Descripción',
+            Value: descripcion,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Orden',
+            Value: orden,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Secciones',
+            Value: secciones,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Tipo de Elemento',
+            Value: tipoElemento,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Elemento',
+            Value: elemento,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'ID set',
+            Value: setID,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Cuenta',
+            Value: cuenta,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label: 'Descripción',
+            Value : descripcion2,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Valor Largo',
+            Value: valorLargo,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 1',
+            Value: parametro1,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 2',
+            Value: parametro2,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 3',
+            Value: parametro3,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 4',
+            Value: parametro4,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 5',
+            Value: parametro5,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 6',
+            Value: parametro6,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 7',
+            Value: parametro7,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 8',
+            Value: parametro8,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 9',
+            Value: parametro9,
+        },
+        {
+            $Type: 'UI.DataField',
+            Label: 'Páramentro 10',
+            Value: parametro10,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        }
         ],
     },
     UI.Facets                     : [{

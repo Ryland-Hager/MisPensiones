@@ -18,13 +18,13 @@ annotate service.AporPlanPrevPatri with @(UI: {
     LineItem       : [
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>setID}',
-            Value: setID,
+            Label: '{i18n>fechaEfectiva}',
+            Value: fechaEfectiva,
         },
         {
             $Type: 'UI.DataField',
-            Label: '{i18n>fechaEfectiva}',
-            Value: fechaEfectiva,
+            Label: '{i18n>setID}',
+            Value: setID,
         },
         {
             $Type: 'UI.DataField',
@@ -46,6 +46,25 @@ annotate service.AporPlanPrevPatri with @(UI: {
             Label: '{i18n>porcentajeAportacion}',
             Value: porcentajeAportacion,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : createdAt,
+            Label : 'createdAt',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : createdBy,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedAt,
+            Label : 'Fecha modificación',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+            Label : 'Usuario',
+        },
     ],
     SelectionFields: [
         setID,
@@ -60,13 +79,13 @@ annotate service.AporPlanPrevPatri with @(
         Data : [
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>setID}',
-                Value: setID,
+                Label: '{i18n>fechaEfectiva}',
+                Value: fechaEfectiva,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{i18n>fechaEfectiva}',
-                Value: fechaEfectiva,
+                Label: '{i18n>setID}',
+                Value: setID,
             },
             {
                 $Type: 'UI.DataField',
@@ -90,22 +109,12 @@ annotate service.AporPlanPrevPatri with @(
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>createdAt}',
-                Value: createdAt,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>createdBy}',
-                Value: createdBy,
-            },
-            {
-                $Type: 'UI.DataField',
-                Label: '{18n>modifiedAt}',
+                Label: 'Fecha modificación',
                 Value: modifiedAt,
             },
             {
                 $Type: 'UI.DataField',
-                Label: '{18n>modifiedBy}',
+                Label: 'Usuario',
                 Value: modifiedBy,
             },
         ],
